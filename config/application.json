@@ -1,0 +1,13 @@
+{
+  "name": "Tuesday",
+  "production": {
+    "socket": {
+      "endpoint": "//api.techtues.net/socket"
+    }
+  },
+  "development": {
+    "socket": {
+      "endpoint": "//localhost:4000/socket"
+    }
+  }
+}

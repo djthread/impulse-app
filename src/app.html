@@ -1,0 +1,74 @@
+<template>
+  <header class="topshadow">
+    <h1 class="logo">
+      <a href="/"><span>Impulse</span> Detroit</a>
+    </h1>
+    <nav>
+      <ul>
+        <li repeat.for="row of router.navigation">
+          <a data-toggle="collapse"
+            class="${row.isActive ? 'active' : ''}"
+            data-target="#skeleton-navigation-navbar-collapse.in"
+            href.bind="row.href">${row.title}</a>
+        </li>
+      </ul>
+      <!--
+      <ul>
+        <li><a href="#">Schedule</a></li>
+        <li><a href="#">Shows</a></li>
+        <li><a href="#">Info</a></li>
+      </ul>
+      -->
+    </nav>
+    <div class="clearer"></div>
+  </header>
+
+  <router-view></router-view>
+  <!--
+    <div class="section-secondary">
+      <tabs tabs.bind="ttTabs"></tabs>
+      <tab-sections>
+        <tab-section section="section-chat" view-model="chat" default-section="yup">
+        </tab-section>
+        <tab-section section="section-schedule" view-model="schedule">
+        </tab-section>
+        <tab-section section="section-podcast" view-model="podcast">
+        </tab-section>
+        <tab-section section="section-info" view-model="info">
+        </tab-section>
+      </tab-sections>
+    </div>
+
+  </div>
+  -->
+
+  <div class="clearer"></div>
+  <footer>
+  <!--
+    <div class="right bit lg">
+      <p>Techno Tuesday is a Thread production.</p>
+      <p>Urban Bean Co.<br>
+      200 Grand River Ave<br>
+      Detroit, MI 48226</p>
+    </div>
+  -->
+    <div class="right bit sm">
+      <p>Made possible by</p>
+      <ul>
+        <li><a href="https://github.com/arut/nginx-rtmp-module">nginx-rtmp-module</a>, <a href="http://nginx.org/nginx">nginx</a></li>
+        <li><a href="http://www.phoenixframework.org/">Phoenix</a>, <a href="http://elixir-lang.org/">Elixir</a></li>
+        <li><a href="http://aurelia.io/">Aurelia</a>, <a href="http://videojs.com/">Video.js</a></li>
+      </ul>
+    </div>
+    <div class="right bit sm">
+      <p>Special thanks to</p>
+      <ul>
+        <li><a href="https://twitter.com/urbanbeanco">Urban Bean Co.</a></li>
+        <li><a href="https://rocketfiber.com/">Rocket Fiber</a></li>
+      </ul>
+    </div>
+    <div class="clearer"></div>
+  </footer>
+
+</div>
+</template>

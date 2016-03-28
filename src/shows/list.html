@@ -1,0 +1,20 @@
+<template>
+  <section class="main">
+    <div class="content">
+      <h2>Our Show Roster</h2>
+      <ul class="shows">
+        <li repeat.for="show of state.shows">
+          <a route-href="route: show; params.bind: {slug: show.slug}">
+            <div class="btnimg btnimg-${show.slug}">
+              <div>&nbsp;</div>
+            </div>
+            <div class="showinfo">
+              <h3>${show.name}</h3>
+              <p>Stuff things</p>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+</template>

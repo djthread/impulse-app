@@ -1,0 +1,11 @@
+<template>
+  <ul>
+    <li repeat.for="row of router.navigation">
+      <a data-toggle="collapse"
+        class="${row.isActive ? 'active' : ''}"
+        data-target="#skeleton-navigation-navbar-collapse.in"
+        href.bind="row.href">${row.title}</a>
+    </li>
+  </ul>
+  <router-view></router-view>
+</template>
