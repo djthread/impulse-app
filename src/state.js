@@ -14,8 +14,10 @@ export class State {
     this.shows     = [];
 
     [this.socket, this.site, this.lobby, this.stat] = this.startSocket();
+  }
 
-    this.getShows();
+  initialize(cb) {
+    this.getShows(cb);
   }
 
   pushEvent(ev, msg) {
@@ -110,11 +112,39 @@ export class State {
 
   }
 
-  getShows() {
+  getShows(cb) {
     this.push(this.site, "shows", {}, (data) => {
       this.shows = data.shows;
-      console.log("data", data);
+      cb();
     }.bind(this));
+  }
+
+  getShow(slug, cb) {
+    var info = this.showAndIdxBySlug(slug),
+        idx  = info["idx"],
+        show = this.shows[idx];
+
+    if (show.is_expanded) {
+      cb(show);
+    } else {
+      this.push(this.site, "show", {slug: slug}, (response) => {
+        var fullShow = response.show;
+        console.log('fullshow', fullShow);
+        fullShow.is_expanded = true;
+        this.shows.splice(idx, 1, fullShow);
+        cb(fullShow);
+      }.bind(this));
+    }
+  }
+
+  showAndIdxBySlug(slug) {
+    console.log('SHOWS', this.shows);
+    for (var i=0; i<this.shows.length; i++) {
+      if (this.shows[i].slug == slug) {
+        return {show: this.shows[i], idx: i};
+      }
+    }
+    return null;
   }
 
   setupStamps(msg) {

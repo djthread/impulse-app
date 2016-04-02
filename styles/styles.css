@@ -11,14 +11,14 @@ header { border-bottom: 3px solid #f63; background: transparent;
 .logo { font-family: desmonanz; padding: 32px 0 0 24px; font-size: 32px; float: left; }
 .logo a,.logo a:visited { color: #f63; text-decoration: none; display: block; }
 .logo span { text-transform: lowercase; color: #f63; }
-nav ul { padding: 0; margin: 0px 0 0 12px; float: left; }
-nav ul li { display: inline-block; float: left; list-style: none; padding: 0 0 0 5px; }
-nav a { color: #f63; text-decoration: none; font-weight: 700; display: block;
+nav.main ul { padding: 0; margin: 0px 0 0 12px; float: left; }
+nav.main ul li { display: inline-block; float: left; list-style: none; padding: 0 0 0 5px; }
+nav.main a { color: #f63; text-decoration: none; font-weight: 700; display: block;
   padding: 12px 5px 5px 5px; }
-nav a:visited { color: #f63; }
-nav a.active { background-color: black; }
-nav a:hover { background-color: black; }
-nav a.active, nav a:hover { background-color: black; color: #f96; }
+nav.main a:visited { color: #f63; }
+nav.main a.active { background-color: black; }
+nav.main a:hover { background-color: black; }
+nav.main a.active, nav.main a:hover { background-color: black; color: #f96; }
 .hero { /* background-size: cover; */ background-position: center center;
   clear: both; height: 50vh;
   border-bottom: 3px solid #f63;
@@ -85,21 +85,40 @@ ul.shows li { list-style-type: none; float: left; margin: 0.5em; }
 ul.shows a { display: block; width: 332px; padding: 6px;
   background-color: #111; }
 ul.shows a:hover { border-color: #f63; background-color: #181818; }
-ul.shows .btnimg { width: 320px; height: 212px; }
+ul.shows .btnimg { width: 320px; height: 180px; }
 ul.shows .btnimg-techno-tuesday {
   background-image: url(../images/showbtns/techno-tuesday.jpg); }
 ul.shows .btnimg div { height: 100%; background: rgba(0,0,0,0.3); }
 ul.shows a:hover .btnimg div { background: transparent; }
 ul.shows a { color: #ccc; text-decoration: none; }
-ul.shows .showinfo { padding: 8px; margin-top: 4px; }
-ul.shows .showinfo h3 { margin: 0; }
-ul.shows .showinfo p { margin-bottom: 0; }
+ul.shows .showinfo { padding: 8px; }
+ul.shows .showinfo p { margin: 0; }
 ul.shows a:hover .showinfo { color: white; }
+
+section.show { clear: both; }
+section.show div.page { clear: both; padding: 0.5em 1em; }
+section.show h2 { margin: 0.5em; margin-bottom: 0; font-size: xx-large; }
+
+nav.show ul { margin: 0 0 0.5em 0.5em; padding: 0; }
+nav.show ul li { display: inline-block; float: left; list-style: none; padding: 0 0 0 5px; }
+nav.show a { color: #f63; text-decoration: none; display: block;
+  padding: 2em 1em 0.5em 1em; }
+nav.show a:visited { color: #f63; }
+nav.show a.active, nav.main a:hover { color: #f96; background-color: rgba(0,0,0,0.5); }
+
+.showhero { background-size: cover; background-position: center center;
+  clear: both; height: 30vh;
+  border-bottom: 3px solid #f63; }
+.show-techno-tuesday {
+  background-image: url(../images/showheros/techno-tuesday.jpeg); }
+.showhero-overlay { height: 100%; }
+.showhero-info { max-width: 18em; float: right; padding: 0.7em; font-size: x-large;
+  margin-top: 1em; background: rgba(0,0,0,0.4); color: #eee; }
 
 footer { clear: both; margin-top: 4em; padding: 20px 40px;
     border-top: 2px solid #333;
-    background: rgba(0, 0, 0, .50); }
-footer .bit { float: left; }
+    background: rgba(0,0,0,0.5); }
+/* footer .bit { float: left; } */
 footer .lg { width: 40%; }
 footer .lg .bit p { }
 footer .sm { width: 30%; }
@@ -117,6 +136,6 @@ footer .sm .bit p { margin: 0; }
 }
 
 @media (min-width: 458px) {
-  nav a { padding-top: 45px; }
+  nav.main a { padding-top: 45px; }
   .logo { padding-bottom: 12px; }
 }

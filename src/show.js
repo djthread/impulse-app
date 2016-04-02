@@ -5,6 +5,7 @@ import {inject} from "aurelia-framework";
 export class Show {
   constructor(state) {
     this.state = state;
+    this.slug  = null;
   }
 
   configureRouter(config, router) {
@@ -12,14 +13,43 @@ export class Show {
 
     config.map([
       { route:    ["", "/"],
+        name:     "home",
+        title:    "Home",
+        moduleId: "./show/home",
+        nav:      true
+      },
+      { route:    "/podcast",
         name:     "podcast",
-        moduleId: "./show/podcast"
+        title:    "Podcast",
+        moduleId: "./show/podcast",
+        nav:      true
+      },
+      { route:    "/schedule",
+        name:     "schedule",
+        title:    "Schedule",
+        moduleId: "./show/schedule",
+        nav:      true
       },
       { route:    "/info",
         name:     "info",
+        title:    "Info",
         moduleId: "./show/info",
+        nav:      true
       }
     ]);
+  }
+
+  activate(params) {
+    var state = this.state;
+
+    this.slug = params.slug;
+
+    return new Promise((accept, reject) => {
+      state.getShow(this.slug, (show) => {
+        this.show = show;
+        accept();
+      }.bind(this));
+    }.bind(this));
   }
 
 }

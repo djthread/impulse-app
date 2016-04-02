@@ -1,11 +1,23 @@
 <template>
-  <ul>
-    <li repeat.for="row of router.navigation">
-      <a data-toggle="collapse"
-        class="${row.isActive ? 'active' : ''}"
-        data-target="#skeleton-navigation-navbar-collapse.in"
-        href.bind="row.href">${row.title}</a>
-    </li>
-  </ul>
-  <router-view></router-view>
+  <section class="showhero show-${slug}">
+    <div class="showhero-overlay">
+      <!-- <div class="showhero&#45;info"></div> -->
+    </div>
+  </section>
+  <section class="show">
+    <h2>${show.name}</h2>
+    <nav class="show">
+      <ul>
+        <li repeat.for="row of router.navigation">
+          <a data-toggle="collapse"
+            class="${row.isActive ? 'active' : ''}"
+            data-target="#skeleton-navigation-navbar-collapse.in"
+            href.bind="row.href">${row.title}</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="page">
+      <router-view></router-view>
+    </div>
+  </section>
 </template>

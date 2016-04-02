@@ -51,4 +51,13 @@ export class App {
     //   {id: "section-info",     label: "Info"}
     // ];
   }
+
+  activate() {
+    console.log('WHEAETDAETDEA,');
+    return new Promise((accept, reject) => {
+      this.state.initialize(() => {
+        accept();
+      });
+    }.bind(this));
+  }
 }
