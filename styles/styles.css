@@ -2,7 +2,8 @@
 .splash { margin: 1em; }
 
 @font-face { font-family: desmonanz; src: url(../resources/desonanz.ttf); }
-body { background-color: #222; color: #ccc; margin: 0; font-family: "Josefin Sans", sans-serif; }
+body { background-color: #222; color: #ccc; margin: 0;
+  font-size: 120%; font-family: "Josefin Sans", sans-serif; }
 header { border-bottom: 3px solid #f63; background: transparent;
   background: -webkit-linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0), rgba(0,0,0,0));
   background: -o-linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0), rgba(0,0,0,0));
@@ -97,7 +98,7 @@ ul.shows a:hover .showinfo { color: white; }
 
 section.show { clear: both; }
 section.show div.page { clear: both; padding: 0.5em 1em; }
-section.show h2 { margin: 0.5em; margin-bottom: 0; font-size: xx-large; }
+section.show h2 { margin: 1em 0.5em; margin-bottom: 0; font-size: xx-large; }
 
 nav.show ul { margin: 0 0 0.5em 0.5em; padding: 0; }
 nav.show ul li { display: inline-block; float: left; list-style: none; padding: 0 0 0 5px; }
@@ -105,6 +106,25 @@ nav.show a { color: #f63; text-decoration: none; display: block;
   padding: 2em 1em 0.5em 1em; }
 nav.show a:visited { color: #f63; }
 nav.show a.active, nav.main a:hover { color: #f96; background-color: rgba(0,0,0,0.5); }
+nav.show i { }
+
+.show .page .sidebar ul { list-style-type: none; line-height: 1.5em; margin: 0; padding: 0; }
+.show .page .sidebar { font-size: large; }
+.show .page .sidebar li { float: left; }
+.show .page .sidebar a { text-decoration: none; }
+.show .page .sidebar i { display: block; clear: both; float: left; width: 1.5em;
+  text-align: center; padding-top: 0.1em; }
+.show .page .short-info { clear: both; }
+
+.show .page ul.podcast { list-style-type: none; }
+.show .page ul.podcast i { width: 1.5em; }
+.show .page ul.podcast h3 { font-weight: normal; margin-bottom: 0.25em; }
+.show .page ul.podcast h3 span { font-weight: bold; color: white; }
+.show .page ul.podcast .player { width: 100%; }
+.show .page ul.podcast audio { width: 100%; }
+.show .page ul.podcast .player p { margin: 0; text-align: right; font-size: small; }
+.show .page ul.podcast .description { padding-left: 2em; margin-top: 0.25em; }
+
 
 .showhero { background-size: cover; background-position: center center;
   clear: both; height: 30vh;
@@ -131,8 +151,11 @@ footer .sm .bit p { margin: 0; }
 @media (min-width: 700px) {
   .section-left { float: left; width: 50%; }
   .section-right { width: 50%; float: right; padding-left: 12px; padding-top: 0; }
-    /* padding-left: 12px; padding-top: 1.6em; } */
   .main-schedule-next { display: block; }
+  .show .page .sidebar { float: right; width: 30%; margin-left: 1em; font-size: x-large; }
+  .show .page .sidebar li { float: none; }
+  .show .page .short-info { clear: none; }
+  .show .page ul.podcast .player { float: right; width: 50%; margin-top: -1.5em; }
 }
 
 @media (min-width: 458px) {

@@ -6,6 +6,13 @@ export class Show {
   constructor(state) {
     this.state = state;
     this.slug  = null;
+
+    this.faicons = {
+      Home:     "home",
+      Podcast:  "volume-up",
+      Schedule: "calendar",
+      Info:     "info-circle"
+    };
   }
 
   configureRouter(config, router) {

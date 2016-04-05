@@ -1,2 +1,15 @@
 <template>
+  <require from="../episodePlayer"></require>
+  <ul class="podcast">
+    <li repeat.for="ep of show.episodes">
+      <h3>
+        <i class="icon fa fa-volume-up"></i>
+        <span>${ep.number}.</span> ${ep.title}
+      </h3>
+      <div class="player">
+        <episode-player episode.bind="ep"></episode-player>
+      </div>
+      <p class="description">${ep.description}</p>
+    </li>
+  </ul>
 </template>

@@ -5,7 +5,7 @@ export function configure(aurelia) {
     .developmentLogging()
     .plugin('aurelia-configuration', config => {
       config.setEnvironments({
-        development: ['localhost'],
+        development: ['localhost', '192.168.0.206'],
         production:  ['techtues.net']
       });
     });

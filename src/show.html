@@ -12,7 +12,10 @@
           <a data-toggle="collapse"
             class="${row.isActive ? 'active' : ''}"
             data-target="#skeleton-navigation-navbar-collapse.in"
-            href.bind="row.href">${row.title}</a>
+            href.bind="row.href">
+            <i class="fa fa-${faicons[row.title]}"></i>&nbsp;
+            ${row.title}
+          </a>
         </li>
       </ul>
     </nav>

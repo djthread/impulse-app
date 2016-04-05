@@ -1,3 +1,8 @@
 <template>
-  <p>${show.short_info}</p>
+  <div class="sidebar">
+    <compose view="show/${show.slug}/sidebar.html"></compose>
+  </div>
+  <div class="short-info">
+    <p>${show.short_info}</p>
+  </div>
 </template>
