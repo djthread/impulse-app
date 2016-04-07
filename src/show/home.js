@@ -6,4 +6,8 @@ export class Home {
   constructor(state) {
     this.state = state;
   }
+
+  activate() {
+    this.show = this.state.show;
+  }
 }

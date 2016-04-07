@@ -1,9 +1,11 @@
 <template>
   <header class="topshadow">
     <h1 class="logo">
-      <a href="/"><span>Impulse</span> Detroit</a>
+      <a route-href="route: live">
+        <span>Impulse</span> Detroit
+      </a>
     </h1>
-    <nav class="main">
+    <nav class="main dropshadow">
       <ul>
         <li repeat.for="row of router.navigation">
           <a data-toggle="collapse"

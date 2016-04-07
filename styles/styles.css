@@ -4,7 +4,7 @@
 @font-face { font-family: desmonanz; src: url(../resources/desonanz.ttf); }
 body { background-color: #222; color: #ccc; margin: 0;
   font-size: 120%; font-family: "Josefin Sans", sans-serif; }
-header { border-bottom: 3px solid #f63; background: transparent;
+header { border-bottom: 3px solid #f63; background: transparent; padding-bottom: 8px;
   background: -webkit-linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0), rgba(0,0,0,0));
   background: -o-linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0), rgba(0,0,0,0));
   background: -moz-linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0), rgba(0,0,0,0));
@@ -27,14 +27,14 @@ nav.main a.active, nav.main a:hover { background-color: black; color: #f96; }
 .hero-overlay { height: 100%; }
 .hero-info { max-width: 18em; float: right; padding: 0.7em; font-size: x-large;
   margin-top: 1em; background: rgba(0,0,0,0.4); color: #eee; }
-.main { background: transparent;
+.dropshadow { background: transparent;
   background: -webkit-linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.2), rgba(0,0,0,0.7));
   background: -o-linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.2), rgba(0,0,0,0.7));
   background: -moz-linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.2), rgba(0,0,0,0.7));
   background: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.0), rgba(0,0,0,0.0)); }
-.content { padding: 1.5em 1.5em 0 1.5em; }
+.content { padding: 0.5em 1.5em 0 1.5em; }
 h1 { margin: 0; }
-h2 { margin: 0; }
+h2 { margin: 0; padding: 0.5em 0 0.2em 0; }
 a { color: #f63; }
 a:visited, a:hover { color: #f96; }
 .clearer { line-height: 0; clear: both; }
@@ -81,7 +81,7 @@ input.chat-submit { visibility: hidden; }
 .info { height: 1em; float: right; font-size: small; color: #999; }
 .info span { font-weight: bold; color: white; }
 
-ul.shows { padding: 0; }
+ul.shows { padding: 0; margin: 0; }
 ul.shows li { list-style-type: none; float: left; margin: 0.5em; }
 ul.shows a { display: block; width: 332px; padding: 6px;
   background-color: #111; }
@@ -97,13 +97,13 @@ ul.shows .showinfo p { margin: 0; }
 ul.shows a:hover .showinfo { color: white; }
 
 section.show { clear: both; }
-section.show div.page { clear: both; padding: 0.5em 1em; }
-section.show h2 { margin: 1em 0.5em; margin-bottom: 0; font-size: xx-large; }
+section.show div.page { clear: both; padding: 0.5em 0; }
+/* section.show h2 { padding: 1em 0.5em; margin-bottom: 0; font-size: xx-large; } */
 
-nav.show ul { margin: 0 0 0.5em 0.5em; padding: 0; }
-nav.show ul li { display: inline-block; float: left; list-style: none; padding: 0 0 0 5px; }
+nav.show ul { margin: 0; padding: 0; }
+nav.show ul li { display: inline-block; float: left; list-style: none; }
 nav.show a { color: #f63; text-decoration: none; display: block;
-  padding: 2em 1em 0.5em 1em; }
+  padding: 1em 0.4em 0.2em 0.4em; }
 nav.show a:visited { color: #f63; }
 nav.show a.active, nav.main a:hover { color: #f96; background-color: rgba(0,0,0,0.5); }
 nav.show i { }
@@ -116,14 +116,14 @@ nav.show i { }
   text-align: center; padding-top: 0.1em; }
 .show .page .short-info { clear: both; }
 
-.show .page ul.podcast { list-style-type: none; }
+.show .page ul.podcast { list-style-type: none; padding-left: 0; }
 .show .page ul.podcast i { width: 1.5em; }
-.show .page ul.podcast h3 { font-weight: normal; margin-bottom: 0.25em; }
+.show .page ul.podcast h3 { font-weight: normal; margin-bottom: 0.25em; padding-left: 0.7em; }
 .show .page ul.podcast h3 span { font-weight: bold; color: white; }
 .show .page ul.podcast .player { width: 100%; }
 .show .page ul.podcast audio { width: 100%; }
-.show .page ul.podcast .player p { margin: 0; text-align: right; font-size: small; }
-.show .page ul.podcast .description { padding-left: 2em; margin-top: 0.25em; }
+.show .page ul.podcast .description { padding-left: 28px; margin: 0.25em 0; color: #999; }
+.show .page ul.podcast .download { padding-left: 28px; margin-top: 0; font-size: small; }
 
 
 .showhero { background-size: cover; background-position: center center;
@@ -155,10 +155,26 @@ footer .sm .bit p { margin: 0; }
   .show .page .sidebar { float: right; width: 30%; margin-left: 1em; font-size: x-large; }
   .show .page .sidebar li { float: none; }
   .show .page .short-info { clear: none; }
-  .show .page ul.podcast .player { float: right; width: 50%; margin-top: -1.5em; }
+  .show .page ul.podcast .player { float: right; width: 50%; }
+  nav.show ul { margin: 0; padding: 0; }
+  nav.show a { padding: 2em 1em 0.5em 1em; }
 }
 
-@media (min-width: 458px) {
-  nav.main a { padding-top: 45px; }
-  .logo { padding-bottom: 12px; }
+@media (min-width: 489px) {
+  nav.main a { padding-top: 42px; }
+  .logo { padding-bottom: 0; }
+}
+
+/* Ultra skinny view */
+@media (max-width: 386px) {
+  header { padding-bottom: 0; }
+  .logo { padding: 18px 0 0 12px; font-size: 32px; float: left; }
+  nav.main ul { margin-left: 12px; }
+  nav.main ul { margin-left: 0; }
+  ul.shows li { margin: 0; }
+  ul.shows .btnimg { background-position: center; background-repeat: no-repeat; width: 100%; }
+  ul.shows a { width: 100%; }
+  .content { padding: 0; }
+  section.show div.page { padding: 1em 8px; }
+  h2 { margin: 0; padding: 0.5em 8px; }
 }

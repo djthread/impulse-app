@@ -54,6 +54,7 @@ export class Show {
     return new Promise((accept, reject) => {
       state.getShow(this.slug, (show) => {
         this.show = show;
+        state.show = show;
         accept();
       }.bind(this));
     }.bind(this));
