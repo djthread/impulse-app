@@ -5,6 +5,5 @@ import {inject} from "aurelia-framework";
 export class Podcast {
   constructor(state) {
     this.state = state;
-    console.log("show", this.show);
   }
 }

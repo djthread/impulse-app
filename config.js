@@ -36,7 +36,9 @@ System.config({
     "core-js": "npm:core-js@1.2.6",
     "fetch": "github:github/fetch@0.10.1",
     "font-awesome": "npm:font-awesome@4.5.0",
+    "moment": "npm:moment@2.12.0",
     "phoenix.js": "github:djthread/phoenix.js@1.1.4",
+    "showdown": "github:showdownjs/showdown@1.3.0",
     "text": "github:systemjs/plugin-text@0.0.3",
     "video.js": "npm:video.js@5.8.0",
     "github:aurelia/dependency-injection@0.9.2": {

@@ -78,8 +78,8 @@ input.form-control { background-color: rgba(99,99,99,0.5); padding: 1%;
 input.chat-name { width: 17%; }
 input.chat-message { width: 82%; float: right; }
 input.chat-submit { visibility: hidden; }
-.info { height: 1em; float: right; font-size: small; color: #999; }
-.info span { font-weight: bold; color: white; }
+/* .info { height: 1em; float: right; font-size: small; color: #999; } */
+/* .info span { font-weight: bold; color: white; } */
 
 ul.shows { padding: 0; margin: 0; }
 ul.shows li { list-style-type: none; float: left; margin: 0.5em; }
@@ -122,8 +122,11 @@ nav.show i { }
 .show .page ul.podcast h3 span { font-weight: bold; color: white; }
 .show .page ul.podcast .player { width: 100%; }
 .show .page ul.podcast audio { width: 100%; }
-.show .page ul.podcast .description { padding-left: 28px; margin: 0.25em 0; color: #999; }
-.show .page ul.podcast .download { padding-left: 28px; margin-top: 0; font-size: small; }
+.show .page ul.podcast .info { margin-left: 28px; }
+.show .page ul.podcast .record-date { font-size: small; }
+.show .page ul.podcast .description { margin: 0.5em 0; }
+.show .page ul.podcast .download { font-size: small; float: right; }
+.show .page ul.podcast .posted-date { font-size: small; color: #aaa; }
 
 
 .showhero { background-size: cover; background-position: center center;
