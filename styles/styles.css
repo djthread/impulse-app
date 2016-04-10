@@ -128,6 +128,18 @@ nav.show i { }
 .show .page ul.podcast .download { font-size: small; float: right; }
 .show .page ul.podcast .posted-date { font-size: small; color: #aaa; }
 
+.show .page .events ul { list-style-type: none; padding-left: .7em; }
+.show .page .events .event { border-left: 3px solid #f63; padding-left: 1em; }
+.show .page .events h4 { margin-bottom: 0; padding: 0; }
+.show .page .events ul.performances { list-style-type: none; }
+.show .page .happens_on { margin-top: 0; font-size: 80%; }
+.show .page .events .time { float: left; margin-right: 0.5em; }
+.show .page .events .artist { float: left; margin-right: 0.5em; }
+.show .page .events .meta { color: #999; margin-right: 0.5em; }
+.show .page .events .extra { margin-left: 1em; margin-top: -1em; }
+
+.show .page .info { margin-top: 1em; }
+
 
 .showhero { background-size: cover; background-position: center center;
   clear: both; height: 30vh;

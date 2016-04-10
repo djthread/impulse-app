@@ -129,6 +129,12 @@ export class State {
     } else {
       this.push(this.site, "show", {slug: slug}, (response) => {
         var fullShow = response.show;
+        console.log('prefullshow', fullShow);
+        fullShow.events = fullShow.events.map((ev) => {
+          ev.info = JSON.parse(ev.info_json);
+          delete ev.info_json;
+          return ev;
+        });
         console.log('fullshow', fullShow);
         fullShow.is_expanded = true;
         this.shows.splice(idx, 1, fullShow);

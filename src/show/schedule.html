@@ -1,2 +1,24 @@
 <template>
+  <require from="../components/markdown"></require>
+  <div class="events">
+    <ul>
+      <li repeat.for="ev of show.events" class="event">
+        <h4>${ev.title}</h4>
+        <p class="happens_on">${ev.happens_on}</p>
+        <p class="description">${ev.description}</p>
+        <ul repeat.for="line of ev.info.lines" class="performances">
+          <li>
+            <div class="time">${line.time}</div>
+            <div class="artist">${line.artist}</div>
+            <div class="meta" if.bind="line.genres || line.affiliations">
+              (${line.genres}<span if.bind="line.genres && line.affiliations">; </span>${line.affiliations})
+            </div>
+            <div class="extra" if.bind="line.extra">
+              <markdown model.bind="line.extra"></markdown>
+            </div>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
 </template>

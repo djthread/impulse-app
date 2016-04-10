@@ -5,5 +5,10 @@ import {inject} from "aurelia-framework";
 export class Schedule {
   constructor(state) {
     this.state = state;
+    this.show  = null;
+  }
+
+  attached() {
+    this.show = this.state.show;
   }
 }

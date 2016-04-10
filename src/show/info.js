@@ -6,4 +6,8 @@ export class Info {
   constructor(state) {
     this.state = state;
   }
+
+  attached() {
+    this.show = this.state.show;
+  }
 }
