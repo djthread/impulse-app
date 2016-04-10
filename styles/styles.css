@@ -132,6 +132,7 @@ nav.show i { }
 .show .page .events .event { border-left: 3px solid #f63; padding-left: 1em; }
 .show .page .events h4 { margin-bottom: 0; padding: 0; }
 .show .page .events ul.performances { list-style-type: none; }
+.show .page .events ul.performances li { clear: both; }
 .show .page .happens_on { margin-top: 0; font-size: 80%; }
 .show .page .events .time { float: left; margin-right: 0.5em; }
 .show .page .events .artist { float: left; margin-right: 0.5em; }
