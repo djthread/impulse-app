@@ -6,7 +6,8 @@ export function configure(aurelia) {
     .plugin('aurelia-configuration', config => {
       config.setEnvironments({
         development: ['localhost', '192.168.0.206'],
-        production:  ['techtues.net']
+        test:        ['test.impulsedetroit.net'],
+        production:  ['techtues.net', 'impulsedetroit.net']
       });
     });
 
