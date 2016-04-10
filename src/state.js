@@ -13,11 +13,26 @@ export class State {
     this.infoline  = "";
     this.shows     = [];
 
+    this.latest_episodes = [];
+    this.latest_events   = [];
+
     [this.socket, this.site, this.lobby, this.stat] = this.startSocket();
   }
 
   initialize(cb) {
-    this.getShows(cb);
+    this.getShows(() => {
+      this.shows.forEach((show) => {
+        this.latest_episodes = this.latest_episodes.concat(show.episodes);
+        this.latest_events   = this.latest_events.concat(show.events);
+      }.bind(this));
+      this.latest_episodes.sort((e1, e2) => {
+        return e1.record_date < e2.record_date ? 1 : -1;
+      });
+      this.latest_events.sort((e1, e2) => {
+        return e1.happens_on > e2.happens_on ? 1 : -1;
+      });
+      cb();
+    }.bind(this));
   }
 
   pushEvent(ev, msg) {
@@ -114,7 +129,10 @@ export class State {
 
   getShows(cb) {
     this.push(this.site, "shows", {}, (data) => {
-      this.shows = data.shows;
+      console.log('SHOWS', data.shows);
+      this.shows = data.shows.map((show) => {
+        return this.parseShowEventsInfo(show);
+      }.bind(this));
       cb();
     }.bind(this));
   }
@@ -128,14 +146,7 @@ export class State {
       cb(show);
     } else {
       this.push(this.site, "show", {slug: slug}, (response) => {
-        var fullShow = response.show;
-        console.log('prefullshow', fullShow);
-        fullShow.events = fullShow.events.map((ev) => {
-          ev.info = JSON.parse(ev.info_json);
-          delete ev.info_json;
-          return ev;
-        });
-        console.log('fullshow', fullShow);
+        var fullShow = this.parseShowEventsInfo(response.show);
         fullShow.is_expanded = true;
         this.shows.splice(idx, 1, fullShow);
         cb(fullShow);
@@ -144,13 +155,23 @@ export class State {
   }
 
   showAndIdxBySlug(slug) {
-    console.log('SHOWS', this.shows);
     for (var i=0; i<this.shows.length; i++) {
       if (this.shows[i].slug == slug) {
         return {show: this.shows[i], idx: i};
       }
     }
     return null;
+  }
+
+  parseShowEventsInfo(show) {
+    var events = show.events.map((ev) => {
+      ev.info     = JSON.parse(ev.info_json);
+      ev.showslug = show.slug;
+      delete ev.info_json;
+      return ev;
+    });
+    show.events = events;
+    return show;
   }
 
   setupStamps(msg) {

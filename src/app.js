@@ -5,12 +5,7 @@ import {inject} from "aurelia-framework";
 @inject(State)
 export class App {
 
-  // ttTabs = [];
-  // video  = null;  // dom element
-
   configureRouter(config, router) {
-    // config.title = 'Techno Tuesday';
-
     config.map([
       { route:    ['', 'live'],
         name:     'live',
@@ -37,23 +32,15 @@ export class App {
         nav:      true
       }
     ]);
-    console.log('navigatio', router.navigation);
 
     this.router = router;
   }
 
   constructor(state) {
     this.state = state;
-    // this.ttTabs = [
-    //   {id: "section-chat",     label: "Chat", selected: true},
-    //   {id: "section-schedule", label: "Schedule"},
-    //   {id: "section-podcast",  label: "Podcast"},
-    //   {id: "section-info",     label: "Info"}
-    // ];
   }
 
   activate() {
-    console.log('WHEAETDAETDEA,');
     return new Promise((accept, reject) => {
       this.state.initialize(() => {
         accept();

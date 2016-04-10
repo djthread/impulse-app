@@ -1,7 +1,11 @@
 <template>
-  <section class="main">
+  <require from="./components/eventsListing"></require>
+  <section class="main dropshadow">
     <div class="content">
-      <compose view="_schedule_next.html"></compose>
+      <h2>Our Schedule</h2>
+      <div class="events-listing">
+        <events-listing events.bind="state.latest_events"></events-listing>
+      </div>
     </div>
   </section>
 </template>

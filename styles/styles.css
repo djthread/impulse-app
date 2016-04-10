@@ -86,15 +86,16 @@ ul.shows li { list-style-type: none; float: left; margin: 0.5em; }
 ul.shows a { display: block; width: 332px; padding: 6px;
   background-color: #111; }
 ul.shows a:hover { border-color: #f63; background-color: #181818; }
-ul.shows .btnimg { width: 320px; height: 180px; }
-ul.shows .btnimg-techno-tuesday {
-  background-image: url(../images/showbtns/techno-tuesday.jpg); }
+.btnimg { width: 320px; height: 180px; }
 ul.shows .btnimg div { height: 100%; background: rgba(0,0,0,0.3); }
 ul.shows a:hover .btnimg div { background: transparent; }
 ul.shows a { color: #ccc; text-decoration: none; }
 ul.shows .showinfo { padding: 8px; }
 ul.shows .showinfo p { margin: 0; }
 ul.shows a:hover .showinfo { color: white; }
+
+.btnimg-techno-tuesday {
+  background-image: url(../images/showbtns/techno-tuesday.jpg); }
 
 section.show { clear: both; }
 section.show div.page { clear: both; padding: 0.5em 0; }
@@ -128,16 +129,19 @@ nav.show i { }
 .show .page ul.podcast .download { font-size: small; float: right; }
 .show .page ul.podcast .posted-date { font-size: small; color: #aaa; }
 
-.show .page .events ul { list-style-type: none; padding-left: .7em; }
-.show .page .events .event { border-left: 3px solid #f63; padding-left: 1em; }
-.show .page .events h4 { margin-bottom: 0; padding: 0; }
-.show .page .events ul.performances { list-style-type: none; }
-.show .page .events ul.performances li { clear: both; }
-.show .page .happens_on { margin-top: 0; font-size: 80%; }
-.show .page .events .time { float: left; margin-right: 0.5em; }
-.show .page .events .artist { float: left; margin-right: 0.5em; }
-.show .page .events .meta { color: #999; margin-right: 0.5em; }
-.show .page .events .extra { margin-left: 1em; margin-top: -1em; }
+.events-listing ul { list-style-type: none; padding-left: .7em;
+  margin: 0; }
+.events-listing .btnimg { display: none; float: right; border: 6px solid #111; }
+.events-listing li.event { clear: both; padding-bottom: .5em; }
+.events-listing li.event .wrap { border-left: 3px solid #f63; padding-left: 1em; }
+.events-listing h4 { margin-bottom: 0; padding: 0; }
+.events-listing ul.performances { list-style-type: none; }
+.events-listing ul.performances li { clear: left; }
+.events-listing .happens_on { margin-top: 0; font-size: 80%; }
+.events-listing .time { float: left; clear: left; margin-right: 0.5em; }
+.events-listing .artist { float: left; margin-right: 0.5em; color: white; }
+.events-listing .meta { color: #999; margin-right: 0.5em; }
+.events-listing .extra { margin-left: 1em; margin-top: -1em; }
 
 .show .page .info { margin-top: 1em; }
 
@@ -174,6 +178,7 @@ footer .sm .bit p { margin: 0; }
   .show .page ul.podcast .player { float: right; width: 50%; }
   nav.show ul { margin: 0; padding: 0; }
   nav.show a { padding: 2em 1em 0.5em 1em; }
+  .events-listing .btnimg { display: block; }
 }
 
 @media (min-width: 489px) {
