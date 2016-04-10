@@ -41,6 +41,7 @@ a:visited, a:hover { color: #f96; }
 
 div.videowrapper { width: 100%; }
 
+/*
 .listings { border: 2px solid rgba(99,99,99,0.5); padding: 1em;
     background-color: rgba(0,0,0,0.33); }
 .listings p { margin-top: 0; font-size: 120%; font-style: italic; }
@@ -50,6 +51,7 @@ div.videowrapper { width: 100%; }
 .listing .artist { color: white; margin-right: 0.2em; font-size: 150%; }
 .listing .meta { font-style: italic; }
 .listing .moar { margin-left: 5em; font-size: 80%; }
+*/
 .messages-outer {
   height: 80%;
   max-height: 18em;
@@ -86,7 +88,7 @@ ul.shows li { list-style-type: none; float: left; margin: 0.5em; }
 ul.shows a { display: block; width: 332px; padding: 6px;
   background-color: #111; }
 ul.shows a:hover { border-color: #f63; background-color: #181818; }
-.btnimg { width: 320px; height: 180px; }
+.btnimg { width: 320px; height: 180px; background-size: contain; }
 ul.shows .btnimg div { height: 100%; background: rgba(0,0,0,0.3); }
 ul.shows a:hover .btnimg div { background: transparent; }
 ul.shows a { color: #ccc; text-decoration: none; }
@@ -117,21 +119,24 @@ nav.show i { }
   text-align: center; padding-top: 0.1em; }
 .show .page .short-info { clear: both; }
 
-.show .page ul.podcast { list-style-type: none; padding-left: 0; }
-.show .page ul.podcast i { width: 1.5em; }
-.show .page ul.podcast h3 { font-weight: normal; margin-bottom: 0.25em; padding-left: 0.7em; }
-.show .page ul.podcast h3 span { font-weight: bold; color: white; }
-.show .page ul.podcast .player { width: 100%; }
-.show .page ul.podcast audio { width: 100%; }
-.show .page ul.podcast .info { margin-left: 28px; }
-.show .page ul.podcast .record-date { font-size: small; }
-.show .page ul.podcast .description { margin: 0.5em 0; }
-.show .page ul.podcast .download { font-size: small; float: right; }
-.show .page ul.podcast .posted-date { font-size: small; color: #aaa; }
+ul.podcast { list-style-type: none; padding-left: 0; }
+ul.podcast i { width: 1.5em; }
+ul.podcast h3 { font-weight: normal; margin-bottom: 0.25em; padding-left: 0.7em; }
+ul.podcast h3 span { font-weight: bold; color: white; }
+ul.podcast .player { width: 100%; }
+ul.podcast audio { width: 100%; }
+ul.podcast .info { margin-left: 28px; }
+ul.podcast .record-date { font-size: small; }
+ul.podcast .description { margin: 0.5em 0; }
+ul.podcast .download { font-size: small; float: right; margin: .5em; }
+ul.podcast .posted-date { font-size: small; color: #aaa; }
 
 .events-listing ul { list-style-type: none; padding-left: .7em;
   margin: 0; }
-.events-listing .btnimg { display: none; float: right; border: 6px solid #111; }
+.events-listing .btnimg { float: right; border: 6px solid #111;
+  width: 160px; height: 90px; }
+.events-listing .btnimg a { display: block;
+  width: 160px; height: 90px; }
 .events-listing li.event { clear: both; padding-bottom: .5em; }
 .events-listing li.event .wrap { border-left: 3px solid #f63; padding-left: 1em; }
 .events-listing h4 { margin-bottom: 0; padding: 0; }
@@ -141,7 +146,7 @@ nav.show i { }
 .events-listing .time { float: left; clear: left; margin-right: 0.5em; }
 .events-listing .artist { float: left; margin-right: 0.5em; color: white; }
 .events-listing .meta { color: #999; margin-right: 0.5em; }
-.events-listing .extra { margin-left: 1em; margin-top: -1em; }
+.events-listing .extra { margin-top: -1em; }
 
 .show .page .info { margin-top: 1em; }
 
@@ -175,13 +180,12 @@ footer .sm .bit p { margin: 0; }
   .show .page .sidebar { float: right; width: 30%; margin-left: 1em; font-size: x-large; }
   .show .page .sidebar li { float: none; }
   .show .page .short-info { clear: none; }
-  .show .page ul.podcast .player { float: right; width: 50%; }
+  ul.podcast .player { float: right; width: 50%; }
   nav.show ul { margin: 0; padding: 0; }
   nav.show a { padding: 2em 1em 0.5em 1em; }
-  .events-listing .btnimg { display: block; }
 }
 
-@media (min-width: 489px) {
+@media (min-width: 567px) {
   nav.main a { padding-top: 42px; }
   .logo { padding-bottom: 0; }
 }

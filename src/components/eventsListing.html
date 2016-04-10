@@ -1,25 +1,38 @@
 <template>
   <require from="../helpers/dateFormat"></require>
+  <require from="./markdown"></require>
   <ul class="events">
     <li repeat.for="ev of events" class="event">
       <div class="wrap">
-        <div class="btnimg btnimg-${ev.showslug}">
+        <div class="btnimg btnimg-${ev.showslug}" if.bind="showbtns">
+          <a href="/#/shows/${ev.showslug}">&nbsp;</a>
         </div>
         <h4>${ev.title}</h4>
         <p class="happens_on">${ev.happens_on | dateFormat:'dddd MMMM Mo, YYYY'}</p>
         <p class="description" if.bind="ev.description">${ev.description}</p>
-        <ul class="performances">
-          <li repeat.for="line of ev.info.lines">
-            <div class="time">${line.time}</div>
-            <div class="artist">${line.artist}</div>
-            <div class="meta" if.bind="line.genres || line.affiliations">
-              (${line.genres}<span if.bind="line.genres && line.affiliations">; </span>${line.affiliations})
-            </div>
-            <div class="extra" if.bind="line.extra">
-              <markdown model.bind="line.extra"></markdown>
-            </div>
-          </li>
-        </ul>
+        <div class="performances">
+          <table>
+            <template repeat.for="line of ev.info.lines">
+            <tr>
+              <td class="time">${line.time}</td>
+              <td>
+                <span class="artist">${line.artist}</span>
+                <span class="meta" if.bind="line.genres || line.affiliations">
+                  (${line.genres}<span if.bind="line.genres && line.affiliations">; </span>${line.affiliations})
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <td></td>
+              <td if.bind="line.extra">
+                <div class="extra">
+                  <markdown model.bind="line.extra"></markdown>
+                </div>
+              </td>
+            </tr>
+            </template>
+          </table>
+        </div>
       </div>
     </li>
   </ul>

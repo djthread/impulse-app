@@ -3,7 +3,7 @@ import {inject} from "aurelia-framework";
 
 @inject(State)
 export class Schedule {
-  constructor(state) {
+  constructor(state, router) {
     this.state = state;
   }
 }

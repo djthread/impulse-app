@@ -4,7 +4,10 @@
     <div class="content">
       <h2>Our Schedule</h2>
       <div class="events-listing">
-        <events-listing events.bind="state.latest_events"></events-listing>
+        <events-listing
+          events.bind="state.latest_events"
+          showbtns="true">
+        </events-listing>
       </div>
     </div>
   </section>

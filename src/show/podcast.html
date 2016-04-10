@@ -1,26 +1,8 @@
 <template>
-  <require from="../components/episodePlayer"></require>
-  <require from="../components/markdown"></require>
-  <require from="../helpers/dateFormat"></require>
+  <require from="../components/episode"></require>
   <ul class="podcast">
     <li repeat.for="ep of show.episodes">
-      <h3>
-        <span>${ep.number}.</span> ${ep.title}
-      </h3>
-      <div class="player">
-        <episode-player episode.bind="ep"></episode-player>
-        <p class="download">
-          <a href="/shows/${state.show.slug}/download/${ep.filename}">Download</a>
-        </p>
-      </div>
-      <div class="info">
-        <p class="description">
-          <markdown model="${ep.description}"></markdown>
-        </p>
-        <p class="posted-date">
-        Recorded on ${ep.record_date}. Posted on ${ep.inserted_at | dateFormat}.
-        </p>
-      </div>
+      <episode episode.bind="ep"></episode>
     </li>
   </ul>
 </template>

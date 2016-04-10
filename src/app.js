@@ -19,6 +19,12 @@ export class App {
         moduleId: './shows',
         nav:      true
       },
+      { route:    'podcast',
+        name:     'podcast',
+        title:    'Podcast',
+        moduleId: './podcast',
+        nav:      true
+      },
       { route:    'schedule',
         name:     'schedule',
         title:    'Schedule',

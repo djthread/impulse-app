@@ -1,3 +1,13 @@
 <template>
-  <p>The plan is to bring it into this space, but for now, you can click here to check out the <a href="https://threadbox.net/show">Techno Tuesday Podcast</a>.</p>
+  <require from="./components/episode"></require>
+  <section class="main dropshadow">
+    <div class="content">
+      <h2>Podcast</h2>
+      <ul class="podcast">
+        <li repeat.for="ep of state.latest_episodes">
+          <episode episode.bind="ep"></episode>
+        </li>
+      </ul>
+    </div>
+  </section>
 </template>
