@@ -131,7 +131,7 @@ export class State {
     this.push(this.site, "shows", {}, (data) => {
       console.log('SHOWS', data.shows);
       this.shows = data.shows.map((show) => {
-        return this.parseShowEventsInfo(show);
+        return this.situateShowInfo(show);
       }.bind(this));
       cb();
     }.bind(this));
@@ -146,7 +146,7 @@ export class State {
       cb(show);
     } else {
       this.push(this.site, "show", {slug: slug}, (response) => {
-        var fullShow = this.parseShowEventsInfo(response.show);
+        var fullShow = this.situateShowInfo(response.show);
         fullShow.is_expanded = true;
         this.shows.splice(idx, 1, fullShow);
         cb(fullShow);
@@ -163,14 +163,25 @@ export class State {
     return null;
   }
 
-  parseShowEventsInfo(show) {
-    var events = show.events.map((ev) => {
+  situateShowInfo(show) {
+    var events, episodes;
+
+    events = show.events.map((ev) => {
       ev.info     = JSON.parse(ev.info_json);
       ev.showslug = show.slug;
       delete ev.info_json;
       return ev;
     });
-    show.events = events;
+
+    episodes = show.episodes.map((ep) => {
+      ep.showslug    = show.slug;
+      ep.downloadUrl = "/download/"+show.slug+"/"+ep.filename;
+      return ep;
+    });
+
+    show.events   = events;
+    show.episodes = episodes;
+
     return show;
   }
 

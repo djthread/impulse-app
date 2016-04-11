@@ -8,7 +8,7 @@
           <a href="/#/shows/${ev.showslug}">&nbsp;</a>
         </div>
         <h4>${ev.title}</h4>
-        <p class="happens_on">${ev.happens_on | dateFormat:'dddd MMMM Mo, YYYY'}</p>
+        <p class="happens_on">${ev.happens_on | dateFormat:'dddd MMMM Do, YYYY'}</p>
         <p class="description" if.bind="ev.description">${ev.description}</p>
         <div class="performances">
           <table>

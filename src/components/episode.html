@@ -1,14 +1,13 @@
 <template>
   <require from="./markdown"></require>
   <require from="./episodePlayer"></require>
-  <require from="../helpers/dateFormat"></require>
   <h3>
     <span>${episode.number}.</span> ${episode.title}
   </h3>
   <div class="player">
     <episode-player episode.bind="episode"></episode-player>
     <p class="download">
-      <a href="/shows/${state.show.slug}/download/${episode.filename}">Download</a>
+      <a href="${episode.downloadUrl}">Download</a>
     </p>
   </div>
   <div class="info">
@@ -16,7 +15,7 @@
       <markdown model="${episode.description}"></markdown>
     </p>
     <p class="posted-date">
-    Recorded on ${episode.record_date}. Posted on ${episode.inserted_at | dateFormat}.
+    Recorded on ${episode.record_date}. Posted on ${episode.posted_on}.
     </p>
   </div>
 </template>

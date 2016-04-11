@@ -4,7 +4,7 @@
     <source src="https://threadbox.net/dnbcast/techtues-030.mp3" type="audio/mp3">
   </audio>
   -->
-  <audio ref="audio" controls data-setup='{}'>
-    <source src="${sourceUrl}" type="audio/mp3">
+  <audio ref="audio" controls preload="none" data-setup='{}'>
+    <source src="${episode.downloadUrl}" type="audio/mp3">
   </audio>
 </template>
