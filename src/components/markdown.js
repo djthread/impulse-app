@@ -12,7 +12,9 @@ export class Markdown {
   static inject = [Element];
   constructor(element){
     this.element = element;
-    this.converter = new showdown.Converter();
+    this.converter = new showdown.Converter({
+      simplifiedAutoLink: true
+    });
   }
 
   attached(){
