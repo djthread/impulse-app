@@ -48,7 +48,7 @@ a { color: #f63; }
 a:visited, a:hover { color: #f96; }
 .clearer { line-height: 0; clear: both; margin: 0; }
 
-.homebox { background-color: rgba(0,0,0,0.5); margin-top: 1em; }
+/* .homebox { background-color: rgba(0,0,0,0.5); margin-top: 1em; } */
 
 div.videowrapper { width: 100%; }
 
