@@ -8,7 +8,6 @@ import videojs from "video.js";
 export class Live {
   constructor(state, eventAggregator) {
     this.state       = state;
-    this.lots        = 9999999;
     this.scrollTop   = 0;
     this.username    = Cookie.get("username");
     this.message     = "";
@@ -28,7 +27,7 @@ export class Live {
 
   scrollMessagesToBottom() {
     setTimeout(() => {
-      this.scrollTop = this.lots;
+      this.scrollTop = 9999999;
     }.bind(this), 50);
   }
 

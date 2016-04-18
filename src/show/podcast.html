@@ -1,8 +1,7 @@
 <template>
-  <require from="../components/episode"></require>
-  <ul class="podcast">
-    <li repeat.for="ep of show.episodes">
-      <episode episode.bind="ep"></episode>
-    </li>
-  </ul>
+  <require from="../components/episodesListing"></require>
+  <div class="episodes-listing">
+    <episodes-listing episodes.bind="show.episodes">
+    </episodes-listing>
+  </div>
 </template>

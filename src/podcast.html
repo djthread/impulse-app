@@ -1,13 +1,13 @@
 <template>
-  <require from="./components/episode"></require>
+  <require from="./components/episodesListing"></require>
   <section class="main dropshadow">
     <div class="content">
       <h2>Podcast</h2>
-      <ul class="podcast">
-        <li repeat.for="ep of state.latest_episodes">
-          <episode episode.bind="ep"></episode>
-        </li>
-      </ul>
+      <div class="episodes-listing">
+        <episodes-listing episodes.bind="state.latest_episodes"
+          showbtns="true">
+        </episodes-listing>
+      </div>
     </div>
   </section>
 </template>

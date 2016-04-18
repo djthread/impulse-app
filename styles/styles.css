@@ -3,14 +3,22 @@
 
 @font-face { font-family: desmonanz; src: url(../resources/desonanz.ttf); }
 body { background-color: #222; color: #ccc; margin: 0;
-  font-size: 120%; font-family: "Josefin Sans", sans-serif; }
+  font-size: 120%; font-family: "Josefin Sans", sans-serif; line-height: 1.2em; }
+header { border-bottom: 3px solid #f63; background: transparent;
+  background: -webkit-linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0), rgba(0,0,0,0.25));
+  background: -o-linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0), rgba(0,0,0,0.7));
+  background: -moz-linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0), rgba(0,0,0,0.7));
+  background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0), rgba(0,0,0,0.3)); }
+  /*
 header { border-bottom: 3px solid #f63; background: transparent; padding-bottom: 8px;
   background: -webkit-linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0), rgba(0,0,0,0));
   background: -o-linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0), rgba(0,0,0,0));
   background: -moz-linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0), rgba(0,0,0,0));
   background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0), rgba(0,0,0,0)); }
-.logo { font-family: desmonanz; padding: 32px 0 0 24px; font-size: 32px; float: left; }
-.logo a,.logo a:visited { color: #f63; text-decoration: none; display: block; }
+  */
+.logo { font-family: desmonanz; padding: 32px 0 0 24px; font-size: 32px; float: left;
+  line-height: 1em; }
+.logo a,.logo a:visited,.logo a:hover { color: #f63; text-decoration: none; display: block; }
 .logo span { text-transform: lowercase; color: #f63; }
 nav.main ul { padding: 0; margin: 0px 0 0 12px; float: left; }
 nav.main ul li { display: inline-block; float: left; list-style: none; padding: 0 0 0 5px; }
@@ -20,7 +28,7 @@ nav.main a:visited { color: #f63; }
 nav.main a.active { background-color: black; }
 nav.main a:hover { background-color: black; }
 nav.main a.active, nav.main a:hover { background-color: black; color: #f96; }
-.hero { /* background-size: cover; */ background-position: center center;
+.hero { background-size: cover; background-position: center center;
   clear: both; height: 50vh;
   border-bottom: 3px solid #f63;
   background-image: url(../images/hero.jpeg); }
@@ -31,13 +39,16 @@ nav.main a.active, nav.main a:hover { background-color: black; color: #f96; }
   background: -webkit-linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.2), rgba(0,0,0,0.7));
   background: -o-linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.2), rgba(0,0,0,0.7));
   background: -moz-linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.2), rgba(0,0,0,0.7));
-  background: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.0), rgba(0,0,0,0.0)); }
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.0), rgba(0,0,0,0.0)); }
 .content { padding: 0.5em 1.5em 0 1.5em; }
 h1 { margin: 0; }
-h2 { margin: 0; padding: 0.5em 0 0.2em 0; }
+h2 { margin: 0 0 0.8em 0; padding: 0.5em 0 0.2em 0; color: #999; }
+h4 { color: #999; }
 a { color: #f63; }
 a:visited, a:hover { color: #f96; }
-.clearer { line-height: 0; clear: both; }
+.clearer { line-height: 0; clear: both; margin: 0; }
+
+.homebox { background-color: rgba(0,0,0,0.5); margin-top: 1em; }
 
 div.videowrapper { width: 100%; }
 
@@ -63,7 +74,6 @@ div.videowrapper { width: 100%; }
 .messages {
   max-height: 18em;
   min-height: 18em;
-  height: 100%;
   width: 100%;
   overflow: auto;
   padding-right: 20px;
@@ -79,13 +89,13 @@ input.form-control { background-color: rgba(99,99,99,0.5); padding: 1%;
     border: none; font-size: 100%; color: #eee; }
 input.chat-name { width: 17%; }
 input.chat-message { width: 82%; float: right; }
-input.chat-submit { visibility: hidden; }
-/* .info { height: 1em; float: right; font-size: small; color: #999; } */
-/* .info span { font-weight: bold; color: white; } */
+input.chat-submit { visibility: hidden; position: absolute; }
+.infoline { height: 1em; float: right; font-size: small; color: #999; }
+.infoline span { font-weight: bold; color: white; }
 
 ul.shows { padding: 0; margin: 0; }
 ul.shows li { list-style-type: none; float: left; margin: 0.5em; }
-ul.shows a { display: block; width: 332px; padding: 6px;
+ul.shows a { display: block; width: 332px; padding: 6px 6px 0 6px;
   background-color: #111; }
 ul.shows a:hover { border-color: #f63; background-color: #181818; }
 .btnimg { width: 320px; height: 180px; background-size: contain; }
@@ -129,7 +139,7 @@ ul.podcast .info { margin-left: 28px; }
 ul.podcast .record-date { font-size: small; }
 ul.podcast .description { margin: 0.5em 0; }
 ul.podcast .download { font-size: small; float: right; margin: .5em; }
-ul.podcast .posted-date { font-size: small; color: #aaa; }
+ul.podcast .posted-date { font-size: medium; color: #aaa; }
 
 .events-listing ul { list-style-type: none; padding-left: .7em;
   margin: 0; }
@@ -148,6 +158,8 @@ ul.podcast .posted-date { font-size: small; color: #aaa; }
 .events-listing .meta { color: #999; margin-right: 0.5em; }
 .events-listing .extra { margin-top: -1em; }
 
+p.more { float: right; }
+
 .show .page .info { margin-top: 1em; }
 
 
@@ -160,13 +172,13 @@ ul.podcast .posted-date { font-size: small; color: #aaa; }
 .showhero-info { max-width: 18em; float: right; padding: 0.7em; font-size: x-large;
   margin-top: 1em; background: rgba(0,0,0,0.4); color: #eee; }
 
-footer { clear: both; margin-top: 4em; padding: 20px 40px;
+footer { clear: both; padding: 20px 40px;
     border-top: 2px solid #333;
-    background: rgba(0,0,0,0.5); }
-/* footer .bit { float: left; } */
+    background: rgba(0,0,0,0.2); }
+footer .bit { float: left; }
 footer .lg { width: 40%; }
 footer .lg .bit p { }
-footer .sm { width: 30%; }
+footer .sm { width: 14em; }
 footer .sm .bit p { margin: 0; }
 
 
