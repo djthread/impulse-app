@@ -34,7 +34,7 @@ nav.main a.active, nav.main a:hover { background-color: black; color: #f96; }
   background-image: url(../images/hero.jpeg); }
 .hero-overlay { height: 100%; }
 .hero-info { max-width: 18em; float: right; padding: 0.7em; font-size: x-large;
-  margin-top: 1em; background: rgba(0,0,0,0.4); color: #eee; }
+  margin-top: 1em; background: rgba(0,0,0,0.4); color: #eee; line-height: 1.2em; }
 .dropshadow { background: transparent;
   background: -webkit-linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.2), rgba(0,0,0,0.7));
   background: -o-linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.2), rgba(0,0,0,0.7));
