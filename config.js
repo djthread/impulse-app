@@ -26,7 +26,6 @@ System.config({
     "aurelia-logging-console": "npm:aurelia-logging-console@1.0.0-beta.1.1.4",
     "aurelia-pal": "npm:aurelia-pal@1.0.0-beta.1.1.1",
     "aurelia-router": "npm:aurelia-router@1.0.0-beta.1.1.1",
-    "aurelia-tabs": "github:vheissu/aurelia-tabs@1.0.0",
     "aurelia-templating-binding": "npm:aurelia-templating-binding@1.0.0-beta.1.1.1",
     "aurelia-templating-resources": "npm:aurelia-templating-resources@1.0.0-beta.1.1.1",
     "aurelia-templating-router": "npm:aurelia-templating-router@1.0.0-beta.1.1.1",
@@ -35,7 +34,7 @@ System.config({
     "bootstrap": "github:twbs/bootstrap@3.3.6",
     "core-js": "npm:core-js@1.2.6",
     "fetch": "github:github/fetch@0.10.1",
-    "font-awesome": "npm:font-awesome@4.5.0",
+    "font-awesome": "npm:font-awesome@4.6.1",
     "moment": "npm:moment@2.12.0",
     "phoenix.js": "github:djthread/phoenix.js@1.1.4",
     "showdown": "github:showdownjs/showdown@1.3.0",
@@ -250,7 +249,7 @@ System.config({
     "npm:es5-shim@4.5.5": {
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
-    "npm:font-awesome@4.5.0": {
+    "npm:font-awesome@4.6.1": {
       "css": "github:systemjs/plugin-css@0.1.20"
     },
     "npm:for-each@0.3.2": {

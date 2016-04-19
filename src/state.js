@@ -122,6 +122,7 @@ export class State {
 
     stat.on("update", stat => {
       this.infoline = stat.viewers + " viewer" + (stat.viewers == 1 ? "" : "s")
+                    + " / " + stat.listeners + " listener" + (stat.listeners == 1 ? "" : "s")
                     + " / " + stat.online + " online";
     }.bind(this));
 
