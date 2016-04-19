@@ -134,6 +134,7 @@ export class State {
       this.shows = data.shows.map((show) => {
         return this.situateShowInfo(show);
       }.bind(this));
+      this.shows = this.sortShows(this.shows);
       cb();
     }.bind(this));
   }
@@ -184,6 +185,24 @@ export class State {
     show.episodes = episodes;
 
     return show;
+  }
+
+  sortShows(shows) {
+    var ret = [], order = [
+      "Techno Tuesday",
+      "Paris of the West"
+    ];
+
+    order.forEach((name) => {
+      for (var i=0; i<shows.length; i++) {
+        if (shows[i].name == name) {
+          ret.push(shows[i]);
+          break;
+        }
+      }
+    });
+
+    return ret;
   }
 
   setupStamps(msg) {
