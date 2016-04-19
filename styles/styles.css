@@ -92,7 +92,8 @@ input.chat-message { width: 82%; float: right; }
 input.chat-submit { visibility: hidden; position: absolute; }
 .infoline { height: 1em; float: right; font-size: small; color: #999; }
 .infoline span { font-weight: bold; color: white; }
-.mp3feedline { font-size: medium; }
+.mp3feedline { clear: both; text-align: center; margin-top: 2em; padding: 0.8em;
+  background-color: rgba(0,0,0,0.33); }
 
 ul.shows { padding: 0; margin: 0; }
 ul.shows li { list-style-type: none; float: left; margin: 0.5em; }
