@@ -4,14 +4,22 @@ import {inject} from "aurelia-framework";
 @inject(State)
 export class Show {
   constructor(state) {
-    this.state = state;
-    this.slug  = null;
+    this.state       = state;
+    this.slug        = null;
+    this.showInfoTab = true;
 
     this.faicons = {
       Home:     "home",
       Podcast:  "volume-up",
       Schedule: "calendar",
       Info:     "info-circle"
+    };
+
+    this.showTab = {
+      Home:     true,
+      Podcast:  true,
+      Schedule: true,
+      Info:     true,
     };
   }
 
@@ -55,7 +63,13 @@ export class Show {
       state.getShow(this.slug, (show) => {
         this.show = show;
         state.show = show;
+
+        if (!this.show.full_info) {
+          this.showTab["Info"] = false;
+        }
+
         accept();
+
       }.bind(this));
     }.bind(this));
   }
