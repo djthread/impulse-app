@@ -192,7 +192,8 @@ export class State {
   sortShows(shows) {
     var ret = [], order = [
       "Techno Tuesday",
-      "Paris of the West"
+      "Paris of the West",
+      "WobbleHead Radio"
     ];
 
     order.forEach((name) => {
