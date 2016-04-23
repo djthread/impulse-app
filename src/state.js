@@ -171,12 +171,14 @@ export class State {
     events = show.events.map((ev) => {
       ev.info     = JSON.parse(ev.info_json);
       ev.showslug = show.slug;
+      ev.showname = show.name;
       delete ev.info_json;
       return ev;
     });
 
     episodes = show.episodes.map((ep) => {
       ep.showslug    = show.slug;
+      ep.showname    = show.name;
       ep.downloadUrl = "/download/"+show.slug+"/"+ep.filename;
       return ep;
     });

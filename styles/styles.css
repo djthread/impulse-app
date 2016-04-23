@@ -43,7 +43,6 @@ nav.main a.active, nav.main a:hover { background-color: black; color: #f96; }
 .content { padding: 0.5em 1.5em 0 1.5em; }
 h1 { margin: 0; }
 h2 { margin: 0 0 0.8em 0; padding: 0.5em 0 0.2em 0; color: #999; }
-h4 { color: #999; }
 a { color: #f63; }
 a:visited, a:hover { color: #f96; }
 .clearer { line-height: 0; clear: both; margin: 0; }
@@ -141,7 +140,9 @@ ul.podcast .player { width: 100%; }
 ul.podcast audio { width: 100%; }
 ul.podcast .info { margin-left: 28px; }
 ul.podcast .record-date { font-size: small; }
-ul.podcast .description { margin: 0.5em 0; }
+ul.podcast .showname { text-transform: uppercase; color: #666; font-size: small;
+  font-weight: bold; margin: 0 5px 0 0; }
+ul.podcast .description {}
 ul.podcast .download { font-size: small; float: right; margin: .5em; }
 ul.podcast .posted-date { font-size: medium; color: #aaa; }
 
