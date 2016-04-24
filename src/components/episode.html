@@ -11,7 +11,11 @@
     </p>
   </div>
   <div class="info">
-    <p class="showname">${episode.showname}</p>
+    <p class="showname">
+      <a href="${episode.showUrl}">
+        ${episode.showname}
+      </a>
+    </p>
     <p class="description">
       <markdown model="${episode.description}"></markdown>
     </p>

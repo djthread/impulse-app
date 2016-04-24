@@ -114,7 +114,7 @@ ul.shows a:hover .showinfo { color: white; }
 .btnimg-wobblehead-radio {
   background-image: url(../images/showbtns/wobblehead-radio.jpg); }
 .btnimg-headroom {
-  background-image: url(../images/showbtns/headroom.jpg); }
+  background-image: url(../images/showbtns/headroom.png); }
 
 section.show { clear: both; }
 section.show div.page { clear: both; padding: 0.5em 0; }
@@ -144,7 +144,7 @@ ul.podcast .player { width: 100%; }
 ul.podcast audio { width: 100%; }
 ul.podcast .info { margin-left: 28px; }
 ul.podcast .record-date { font-size: small; }
-ul.podcast .showname { text-transform: uppercase; color: #666; font-size: small;
+ul.podcast .showname { text-transform: uppercase; font-size: small;
   font-weight: bold; margin: 0 5px 0 0; }
 ul.podcast .description {}
 ul.podcast .download { font-size: small; float: right; margin: .5em; }
@@ -182,7 +182,7 @@ p.more { float: right; }
 .show-wobblehead-radio {
   background-image: url(../images/showheros/wobblehead-radio.jpg); }
 .show-headroom {
-  background-image: url(../images/showheros/headroom.jpg); }
+  background-image: url(../images/showheros/headroom.png); }
 .showhero-overlay { height: 100%; }
 .showhero-info { max-width: 18em; float: right; padding: 0.7em; font-size: x-large;
   margin-top: 1em; background: rgba(0,0,0,0.4); color: #eee; }

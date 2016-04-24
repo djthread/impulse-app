@@ -180,6 +180,7 @@ export class State {
       ep.showslug    = show.slug;
       ep.showname    = show.name;
       ep.downloadUrl = "/download/"+show.slug+"/"+ep.filename;
+      ep.showUrl     = "/!#/shows/"+show.slug;
       return ep;
     });
 
@@ -193,7 +194,8 @@ export class State {
     var ret = [], order = [
       "Techno Tuesday",
       "Paris of the West",
-      "WobbleHead Radio"
+      "WobbleHead Radio",
+      "Headroom"
     ];
 
     order.forEach((name) => {
