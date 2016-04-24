@@ -156,6 +156,12 @@ export class State {
     }
   }
 
+  getEpisode(show, num, cb) {
+    this.push(this.site, "episode", {slug: show.slug, num: num}, (response) => {
+      cb(this.situateEpInfo(response.episode, show));
+    }.bind(this));
+  }
+
   showAndIdxBySlug(slug) {
     for (var i=0; i<this.shows.length; i++) {
       if (this.shows[i].slug == slug) {
@@ -177,17 +183,27 @@ export class State {
     });
 
     episodes = show.episodes.map((ep) => {
-      ep.showslug    = show.slug;
-      ep.showname    = show.name;
-      ep.downloadUrl = "/download/"+show.slug+"/"+ep.filename;
-      ep.showUrl     = "/!#/shows/"+show.slug;
-      return ep;
-    });
+      return this.situateEpInfo(ep, show);
+    }.bind(this));
 
     show.events   = events;
     show.episodes = episodes;
 
     return show;
+  }
+
+  situateEpInfo(ep, show) {
+    ep.showslug    = show.slug;
+    ep.showname    = show.name;
+    ep.downloadUrl = "/download/"+show.slug+"/"+ep.filename;
+    ep.pageUrl     = "/#/shows/"+show.slug+"/podcast/"+this.slugifyEp(ep);
+    ep.showUrl     = "/#/shows/"+show.slug;
+    return ep;
+  }
+
+  slugifyEp(ep) {
+    return ep.number + "-" +
+      ep.title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-*|-*$)/g, "");
   }
 
   sortShows(shows) {

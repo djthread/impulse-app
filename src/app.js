@@ -40,8 +40,6 @@ export class App {
     ]);
 
     this.router = router;
-    console.log('ROUTEAAORRR', this.router);
-    this.state.router = router;
   }
 
   constructor(state) {

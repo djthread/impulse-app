@@ -2,7 +2,8 @@
   <require from="./markdown"></require>
   <require from="./episodePlayer"></require>
   <h3>
-    <span>${episode.number}.</span> ${episode.title}
+    <span>${episode.number}.</span>
+    <a href="${episode.pageUrl}">${episode.title}</a>
   </h3>
   <div class="player">
     <episode-player episode.bind="episode"></episode-player>
@@ -11,7 +12,7 @@
     </p>
   </div>
   <div class="info">
-    <p class="showname">
+    <p class="showname" if.bind="showbtns">
       <a href="${episode.showUrl}">
         ${episode.showname}
       </a>

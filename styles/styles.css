@@ -136,19 +136,19 @@ nav.show i { }
   text-align: center; padding-top: 0.1em; }
 .show .page .short-info { clear: both; }
 
-ul.podcast { list-style-type: none; padding-left: 0; }
-ul.podcast i { width: 1.5em; }
-ul.podcast h3 { font-weight: normal; margin-bottom: 0.25em; padding-left: 0.7em; }
-ul.podcast h3 span { font-weight: bold; color: white; }
-ul.podcast .player { width: 100%; }
-ul.podcast audio { width: 100%; }
-ul.podcast .info { margin-left: 28px; }
-ul.podcast .record-date { font-size: small; }
-ul.podcast .showname { text-transform: uppercase; font-size: small;
+.podcast { list-style-type: none; padding-left: 0; }
+.podcast i { width: 1.5em; }
+.podcast h3 { font-weight: normal; margin-bottom: 0.25em; padding-left: 0.7em; }
+.podcast h3 span { font-weight: bold; color: white; }
+.podcast .player { width: 100%; }
+.podcast audio { width: 100%; }
+.podcast .info { margin-left: 28px; }
+.podcast .record-date { font-size: small; }
+.podcast .showname { text-transform: uppercase; font-size: small;
   font-weight: bold; margin: 0 5px 0 0; }
-ul.podcast .description {}
-ul.podcast .download { font-size: small; float: right; margin: .5em; }
-ul.podcast .posted-date { font-size: medium; color: #aaa; }
+.podcast .description {}
+.podcast .download { font-size: small; float: right; margin: .5em; }
+.podcast .posted-date { font-size: medium; color: #aaa; }
 
 .events-listing ul { list-style-type: none; padding-left: .7em;
   margin: 0; }
