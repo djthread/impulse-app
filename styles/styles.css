@@ -111,6 +111,10 @@ ul.shows a:hover .showinfo { color: white; }
   background-image: url(../images/showbtns/techno-tuesday.jpg); }
 .btnimg-paris-of-the-west {
   background-image: url(../images/showbtns/paris-of-the-west.jpg); }
+.btnimg-wobblehead-radio {
+  background-image: url(../images/showbtns/wobblehead-radio.jpg); }
+.btnimg-headroom {
+  background-image: url(../images/showbtns/headroom.jpg); }
 
 section.show { clear: both; }
 section.show div.page { clear: both; padding: 0.5em 0; }
@@ -175,6 +179,10 @@ p.more { float: right; }
   background-image: url(../images/showheros/techno-tuesday.jpg); }
 .show-paris-of-the-west {
   background-image: url(../images/showheros/paris-of-the-west.jpg); }
+.show-wobblehead-radio {
+  background-image: url(../images/showheros/wobblehead-radio.jpg); }
+.show-headroom {
+  background-image: url(../images/showheros/headroom.jpg); }
 .showhero-overlay { height: 100%; }
 .showhero-info { max-width: 18em; float: right; padding: 0.7em; font-size: x-large;
   margin-top: 1em; background: rgba(0,0,0,0.4); color: #eee; }
