@@ -1,5 +1,4 @@
 import {customElement, bindable} from "aurelia-framework";
-import videojs from "video.js";
 
 @customElement("episode-player")
 export class EpisodePlayer {

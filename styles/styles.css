@@ -31,10 +31,10 @@ nav.main a.active, nav.main a:hover { background-color: black; color: #f96; }
 .hero { background-size: cover; background-position: center center;
   clear: both; height: 50vh;
   border-bottom: 3px solid #f63;
-  background-image: url(../images/siteheros/01.jpg); }
+  background-image: url(../images/siteheros/02.jpg); }
 .hero-overlay { height: 100%; }
-.hero-info { max-width: 18em; float: right; padding: 0.7em; font-size: x-large;
-  margin-top: 1em; background: rgba(0,0,0,0.4); color: #eee; line-height: 1.2em; }
+.hero-info { max-width: 18em; float: left; padding: 0.7em; font-size: x-large;
+  margin-top: 1em; background: rgba(0,0,0,0.6); color: #eee; line-height: 1.2em; }
 .dropshadow { background: transparent;
   background: -webkit-linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.2), rgba(0,0,0,0.7));
   background: -o-linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.2), rgba(0,0,0,0.7));
@@ -91,7 +91,12 @@ input.chat-message { width: 82%; float: right; }
 input.chat-submit { visibility: hidden; position: absolute; }
 .infoline { height: 1em; float: right; font-size: small; color: #999; }
 .infoline span { font-weight: bold; color: white; }
-.mp3feedline { clear: both; text-align: center; margin-top: 2em; padding: 0.8em;
+a.infobutton { clear: both; text-align: center; margin-top: 1em; padding: 0.1em 1em;
+  background-color: rgba(255,95,48,0.1); border: 2px solid #630; display: block;
+  color: white; text-decoration: none; }
+a.infobutton:hover {
+  background-color: rgba(255,95,48,0.3); border: 2px solid #f63; }
+.infobox { clear: both; text-align: center; margin-top: 1em; padding: 0.1em 1em;
   background-color: rgba(0,0,0,0.33); }
 
 ul.shows { padding: 0; margin: 0; display: flex; flex-wrap: wrap; }

@@ -14,14 +14,14 @@
     <div class="content">
       <div class="section-left">
 
-        <div class="videowrapper">
-          <video id="thevideo" class="video-js vjs-default-skin embed-responsive-item"
-           controls preload="auto" poster="/images/poster.jpg">
-            <source src="rtmp://impulsedetroit.net/live/techno" type="rtmp/flv">
-          </video>
-        </div>
-        
         <div class="infoline">${state.infoline}</div>
+
+        <a class="infobutton" route-href="route: live">
+          <p>
+            <i class="fa fa-video-camera"></i> &nbsp;
+            The <strong>live video</strong> is over here!
+          </p>
+        </a>
 
         <div class="infobox">
           <p>
@@ -36,7 +36,6 @@
             <a route-href="route: streaming">streaming tips</a> page.
           </p>
         </div>
-
       </div>
 
       <div class="section-right">

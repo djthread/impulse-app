@@ -1,5 +1,4 @@
 import {State} from "./state";
-import videojs from "video.js";
 import {inject} from "aurelia-framework";
 
 @inject(State)
@@ -7,7 +6,13 @@ export class App {
 
   configureRouter(config, router) {
     config.map([
-      { route:    ['', 'live'],
+      { route:    ['', 'home'],
+        name:     'home',
+        title:    'Home',
+        moduleId: './home',
+        nav:      false
+      },
+      { route:    'live',
         name:     'live',
         title:    'Live',
         moduleId: './live',
@@ -36,6 +41,12 @@ export class App {
         title:    'Info',
         moduleId: './info',
         nav:      true
+      },
+      { route:    'streaming',
+        name:     'streaming',
+        title:    'Streaming',
+        moduleId: './streaming',
+        nav:      false
       }
     ]);
 
