@@ -88,7 +88,7 @@ input.form-control { background-color: rgba(99,99,99,0.5); padding: 1%;
     border: none; font-size: 100%; color: #eee; }
 input.chat-name { width: 17%; }
 input.chat-message { width: 82%; float: right; }
-input.chat-submit { visibility: hidden; position: absolute; }
+input.chat-submit { position: absolute; left: -9999px; }
 .infoline { height: 1em; float: right; font-size: small; color: #999; }
 .infoline span { font-weight: bold; color: white; }
 a.infobutton { clear: both; text-align: center; margin-top: 1em; padding: 0.1em 1em;
