@@ -28,6 +28,9 @@ nav.main a:visited { color: #f63; }
 nav.main a.active { background-color: black; }
 nav.main a:hover { background-color: black; }
 nav.main a.active, nav.main a:hover { background-color: black; color: #f96; }
+nav a.internal { margin-top: 0.3em; }
+nav sup i { color: #fc9; font-size: small !important; }
+/* nav i.fa { font-size: small !important;  } */
 .hero { background-size: cover; background-position: center center;
   clear: both; height: 50vh;
   border-bottom: 3px solid #f63;
