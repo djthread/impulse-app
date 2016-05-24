@@ -18,7 +18,10 @@ header { border-bottom: 3px solid #f63; background: transparent; padding-bottom:
   */
 .logo { font-family: desmonanz; padding: 32px 0 0 24px; font-size: 32px; float: left;
   line-height: 1em; }
-.logo a,.logo a:visited,.logo a:hover { color: #f63; text-decoration: none; display: block; }
+.logo a,.logo a:visited,.logo a:hover {
+  color: #f63; text-decoration: none; display: block;
+  margin-top: 0.2em;
+}
 .logo span { text-transform: lowercase; color: #f63; }
 nav.main ul { padding: 0; margin: 0px 0 0 12px; float: left; }
 nav.main ul li { display: inline-block; float: left; list-style: none; padding: 0 0 0 5px; }
@@ -92,7 +95,7 @@ input.form-control { background-color: rgba(99,99,99,0.5); padding: 1%;
 input.chat-name { width: 17%; }
 input.chat-message { width: 82%; float: right; }
 input.chat-submit { position: absolute; left: -9999px; }
-.infoline { height: 1em; float: right; font-size: small; color: #999; }
+.infoline { float: right; font-size: small; color: #999; }
 .infoline span { font-weight: bold; color: white; }
 a.infobutton { clear: both; text-align: center; margin-top: 1em; padding: 0.1em 1em;
   background-color: rgba(255,95,48,0.1); border: 2px solid #630; display: block;
@@ -220,7 +223,7 @@ footer .sm .bit p { margin: 0; }
   nav.show a { padding: 2em 1em 0.5em 1em; }
 }
 
-@media (min-width: 567px) {
+@media (min-width: 649px) {
   nav.main a { padding-top: 42px; }
   .logo { padding-bottom: 0; }
 }
