@@ -26,7 +26,7 @@ export class State {
         this.latest_events   = this.latest_events.concat(show.events);
       }.bind(this));
       this.latest_episodes.sort((e1, e2) => {
-        return e1.record_date < e2.record_date ? 1 : -1;
+        return e1.posted_on < e2.posted_on ? 1 : -1;
       });
       this.latest_events.sort((e1, e2) => {
         return e1.happens_on > e2.happens_on ? 1 : -1;
@@ -211,7 +211,8 @@ export class State {
       "Techno Tuesday",
       "Paris of the West",
       "WobbleHead Radio",
-      "Headroom"
+      "Headroom",
+      "Specials"
     ];
 
     order.forEach((name) => {

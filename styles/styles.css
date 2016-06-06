@@ -37,7 +37,7 @@ nav sup i { color: #fc9; font-size: small !important; }
 .hero { background-size: cover; background-position: center center;
   clear: both; height: 50vh;
   border-bottom: 3px solid #f63;
-  background-image: url(../images/siteheros/02.jpg); }
+  background-image: url(../images/siteheros/03.jpg); }
 .hero-overlay { height: 100%; }
 .hero-info { max-width: 18em; float: left; padding: 0.7em; font-size: x-large;
   margin-top: 1em; background: rgba(0,0,0,0.6); color: #eee; line-height: 1.2em; }
@@ -118,6 +118,8 @@ ul.shows .showinfo { padding: 8px; }
 ul.shows .showinfo p { margin: 0; }
 ul.shows a:hover .showinfo { color: white; }
 
+.btnimg-specials {
+  background-image: url(../images/showbtns/specials.jpg); }
 .btnimg-techno-tuesday {
   background-image: url(../images/showbtns/techno-tuesday.jpg); }
 .btnimg-paris-of-the-west {
@@ -169,10 +171,14 @@ nav.show i { }
   width: 160px; height: 90px; }
 .events-listing li.event { clear: both; padding-bottom: .5em; }
 .events-listing li.event .wrap { border-left: 3px solid #f63; padding-left: 1em; }
-.events-listing h4 { margin-bottom: 0; padding: 0; }
+/* .events-listing h4 { margin: 0; padding: 0; } */
 .events-listing ul.performances { list-style-type: none; }
 .events-listing ul.performances li { clear: left; }
-.events-listing .happens_on { margin-top: 0; font-size: 80%; }
+.events-listing .happens_on { margin-top: 0; font-size: 80%;
+  font-family: monospace; }
+.events-listing .title { margin-left: 1em; margin-top: 0; font-weight: bold; }
+.events-listing .description { margin-left: 1em; }
+.events-listing .performances { margin-left: 1em; }
 .events-listing .time { float: left; clear: left; margin-right: 0.5em; }
 .events-listing .artist { float: left; margin-right: 0.5em; color: white; }
 .events-listing .meta { color: #999; margin-right: 0.5em; }
@@ -186,6 +192,8 @@ p.more { float: right; }
 .showhero { background-size: cover; background-position: center center;
   clear: both; height: 30vh;
   border-bottom: 3px solid #f63; }
+.show-specials {
+  background-image: url(../images/showheros/specials.jpg); }
 .show-techno-tuesday {
   background-image: url(../images/showheros/techno-tuesday.jpg); }
 .show-paris-of-the-west {

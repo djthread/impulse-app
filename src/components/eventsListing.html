@@ -5,10 +5,10 @@
     <li repeat.for="ev of events" class="event">
       <div class="wrap">
         <div class="btnimg btnimg-${ev.showslug}" if.bind="showbtns">
-          <a href="/#/shows/${ev.showslug}">&nbsp;</a>
+          <a href="/#/shows/${ev.showslug}"></a>
         </div>
-        <h4>${ev.title}</h4>
-        <p class="happens_on">${ev.happens_on | dateFormat:'dddd MMMM Do, YYYY'}</p>
+        <p class="happens_on">${ev.happens_on | dateFormat:'dddd, MMMM Do'}</p>
+        <p class="title">${ev.title}</p>
         <p class="description" if.bind="ev.description">${ev.description}</p>
         <div class="performances">
           <table>
