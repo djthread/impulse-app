@@ -1,9 +1,41 @@
 <template>
   <require from="../components/markdown"></require>
+  <require from="../components/eventsListing"></require>
+  <require from="../components/episodesListing"></require>
   <div class="sidebar">
     <compose view="show/${show.slug}/sidebar.html"></compose>
   </div>
   <div class="short-info">
     <markdown model.bind="show.short_info"></markdown>
   </div>
+
+  <div class="section-left">
+    <h3>Upcoming Events</h3>
+    <div class="events-listing small">
+      <events-listing
+        events.bind="show.events"
+        limit.bind="3" showbtns.bind="false">
+      </events-listing>
+      <p class="more">
+        <a route-href="route: schedule">More Events</a>&nbsp;
+        <i class="fa fa-long-arrow-right"></i>
+      </p>
+    </div>
+  </div>
+
+  <div class="section-right">
+    <h3>Recent Episodes</h3>
+    <div class="episodes-listing small">
+      <episodes-listing episodes.bind="show.episodes"
+        limit.bind="3" showbtns.bind="false">
+      </episodes-listing>
+      <p class="more">
+        <a route-href="route: podcast">More Episodes</a>&nbsp;
+        <i class="fa fa-long-arrow-right"></i>
+      </p>
+    </div>
+  </div>
+
+  <p class="clearer">&nbsp;</p>
+
 </template>

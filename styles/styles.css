@@ -215,9 +215,17 @@ footer .lg .bit p { }
 footer .sm { width: 14em; }
 footer .sm .bit p { margin: 0; }
 
+footer .buttons ul { list-style-type: none; }
+footer .buttons a { display: block; color: #f96;
+  text-decoration: none; padding: 0.4em 1em 0.4em 2.5em; margin-bottom: 0.5em;
+  background-color: rgba(255,95,48,0.1); border: 1px solid #630;}
+footer .buttons a:hover { display: block;
+  background-color: rgba(255,95,48,0.3); border: 1px solid #f63; }
 
 .main-schedule-next { display: none; padding-top: 1em; }
 .section-right { padding-top: 1.6em; }
+
+.wideimg { padding-left: 1em; }
 
 @media (min-width: 700px) {
   .section-left { float: left; width: 50%; }
@@ -229,9 +237,11 @@ footer .sm .bit p { margin: 0; }
   ul.podcast .player { float: right; width: 50%; }
   nav.show ul { margin: 0; padding: 0; }
   nav.show a { padding: 2em 1em 0.5em 1em; }
+  .wideimg { float: right; }
 }
 
 @media (min-width: 649px) {
+  nav.main a.external { padding-top: 36px; margin-top: 6px; }
   nav.main a { padding-top: 42px; }
   .logo { padding-bottom: 0; }
 }

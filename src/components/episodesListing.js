@@ -6,7 +6,7 @@ export class EpisodesListing {
   @bindable showbtns;
   @bindable limit;
 
-  constructor() {
+  attached() {
     if (this.limit && this.episodes.length > this.limit) {
       this.episodes = this.episodes.slice(0, this.limit);
     }

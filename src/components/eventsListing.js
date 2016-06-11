@@ -6,7 +6,7 @@ export class EventsListing {
   @bindable showbtns;
   @bindable limit;
 
-  constructor() {
+  attached() {
     if (this.limit && this.events.length > this.limit) {
       this.events = this.events.slice(0, this.limit);
     }
