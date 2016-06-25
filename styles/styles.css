@@ -55,6 +55,8 @@ a:visited, a:hover { color: #f96; }
 
 .homebox { background-color: rgba(0,0,0,0.5); margin-top: 1em; }
 
+.nodatamsg { color: #888; font-style: italic; }
+
 div.videowrapper { width: 100%; }
 
 /*

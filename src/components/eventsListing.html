@@ -1,7 +1,10 @@
 <template>
   <require from="../helpers/dateFormat"></require>
   <require from="./markdown"></require>
-  <ul class="events">
+  <p class="nodatamsg" if.bind="!events.length">
+    No events currently scheduled.
+  </p>
+  <ul class="events" if.bind="events.length">
     <li repeat.for="ev of events" class="event">
       <div class="wrap">
         <div class="btnimg btnimg-${ev.showslug}" if.bind="showbtns">

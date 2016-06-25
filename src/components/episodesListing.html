@@ -1,5 +1,8 @@
 <template>
   <require from="../components/episode"></require>
+  <p class="nodatamsg" if.bind="!episodes.length">
+    No episodes currently available.
+  </p>
   <ul class="podcast">
     <li repeat.for="ep of episodes">
       <episode episode.bind="ep" showbtns.bind="showbtns"></episode>
