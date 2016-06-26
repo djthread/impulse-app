@@ -169,10 +169,11 @@ nav.show i { }
 
 .events-listing ul { list-style-type: none; padding-left: .7em;
   margin: 0; }
-.events-listing .btnimg { float: right; border: 6px solid #111;
-  width: 160px; height: 90px; }
+.events-listing .btnimg { float: right;
+  width: 172px; height: 102px; }
 .events-listing .btnimg a { display: block;
-  width: 160px; height: 90px; }
+  width: 178px; height: 102px; border: 6px solid #333; }
+.events-listing .btnimg a:hover { border: 6px solid #666; }
 .events-listing li.event { clear: both; padding-bottom: .5em; }
 .events-listing li.event .wrap { border-left: 3px solid #f63; padding-left: 1em; }
 /* .events-listing h4 { margin: 0; padding: 0; } */
