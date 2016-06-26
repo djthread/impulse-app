@@ -209,8 +209,9 @@ export class State {
   sortShows(shows) {
     var ret = [], order = [
       "Techno Tuesday",
-      "Paris of the West",
       "WobbleHead Radio",
+      "SUB:Therapy Radio",
+      "Paris of the West",
       "Headroom",
       "Specials"
     ];

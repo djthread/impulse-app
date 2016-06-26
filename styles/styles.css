@@ -124,6 +124,8 @@ ul.shows a:hover .showinfo { color: white; }
   background-image: url(../images/showbtns/specials.jpg); }
 .btnimg-techno-tuesday {
   background-image: url(../images/showbtns/techno-tuesday.jpg); }
+.btnimg-sub-therapy-radio {
+  background-image: url(../images/showbtns/sub-therapy-radio.jpg); }
 .btnimg-paris-of-the-west {
   background-image: url(../images/showbtns/paris-of-the-west.jpg); }
 .btnimg-wobblehead-radio {
@@ -198,6 +200,8 @@ p.more { float: right; }
   background-image: url(../images/showheros/specials.jpg); }
 .show-techno-tuesday {
   background-image: url(../images/showheros/techno-tuesday.jpg); }
+.show-sub-therapy-radio {
+  background-image: url(../images/showheros/sub-therapy-radio.jpg); }
 .show-paris-of-the-west {
   background-image: url(../images/showheros/paris-of-the-west.jpg); }
 .show-wobblehead-radio {
