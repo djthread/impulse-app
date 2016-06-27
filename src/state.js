@@ -211,8 +211,8 @@ export class State {
       "Techno Tuesday",
       "WobbleHead Radio",
       "SUB:Therapy Radio",
-      "Paris of the West",
-      "Headroom",
+      // "Paris of the West",
+      // "Headroom",
       "Specials"
     ];
 
