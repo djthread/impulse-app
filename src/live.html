@@ -2,6 +2,7 @@
   <require from="./components/chat"></require>
   <require from="./components/eventsListing"></require>
   <require from="./components/episodesListing"></require>
+  <require from="./components/photoListing"></require>
   <section class="hero">
     <div class="hero-overlay">
       <div class="hero-info">
@@ -44,6 +45,11 @@
       <p class="clearer">&nbsp;</p>
 
     </div>
+
+    <div class="photobar">
+      <photo-listing photos.bind="state.photos"></photo-listing>
+    </div>
+
     <div class="content homebox">
 
       <div class="section-left">
