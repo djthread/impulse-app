@@ -317,22 +317,18 @@ export class State {
 			keyControls:        true,
 			// callbacks
 			onopen: function(){
-        console.log('onopen');
 					// ...
 			},
 			onclose: function(){
-        console.log('orncloase');
 					// ...
 			},
 			onload: function(){
-					console.log('onlead');
 					// ...
 			},
 			onresize: function(event){
 					// ...
 			},
 			onloaderror: function(event){
-        console.log('onleoaderror');
 					// ...
 			}
 		};
