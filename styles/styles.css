@@ -53,7 +53,7 @@ a { color: #f63; }
 a:visited, a:hover { color: #f96; }
 .clearer { line-height: 0; clear: both; margin: 0; }
 
-.photobar { background-color: rgba(0,0,0,0.5); padding: 0 2em 3em 2em; }
+.photobar { background-color: rgba(0,0,0,0.5); padding: 0 2em 0.5em 2em; }
 
 .homebox { background-color: rgba(0,0,0,0.5); margin-top: 1em; }
 
@@ -195,7 +195,7 @@ ul.photos { padding: 0; margin-bottom: 0; display: flex;
   flex-wrap: wrap; align-items: center; justify-content: center; }
 .photos li { list-style-type: none; float: left; }
 
-p.more { float: right; }
+p.more { text-align: right; }
 
 .show .page .info { margin-top: 1em; }
 
