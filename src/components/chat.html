@@ -6,8 +6,11 @@
           <span class="stamp" title="${msg.fullStamp}" if.bind="msg.fullStamp">
             ${msg.stamp}
           </span>
-          <span class="username">[${msg.user || "anonymous"}]</span>&nbsp;
-          <span class="body">${msg.body}</span>
+          <template if.bind="!msg.special">
+            <span class="username">[${msg.user || "anonymous"}]</span>&nbsp;
+            <span class="body">${msg.body}</span>
+          </template>
+          <span if.bind="msg.special" class="special">${msg.special}</span>
         </p>
       </div>
     </div>

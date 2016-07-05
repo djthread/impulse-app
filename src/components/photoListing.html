@@ -1,0 +1,10 @@
+<template>
+  <ul class="photos" if.bind="photos.length">
+    <li repeat.for="photo of photos" class="photo">
+      <img class="jslghtbx-thmb" alt=""
+        data-jslghtbx="${photo.full_url}" data-jslghtbx-group="main"
+        data-jslghtbx-caption='See this image in the <a target="_blank" href="${photo.gallery_url}">Photo Gallery</a>.'
+        src="${photo.url}" width="${photo.width}" height="${photo.height}">
+    </li>
+  </ul>
+</template>

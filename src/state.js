@@ -12,11 +12,13 @@ export class State {
     this.lastStamp = null;
     this.infoline  = "";
     this.shows     = [];
+    this.photos    = [];
+    this.lightbox  = null;
 
     this.latest_episodes = [];
     this.latest_events   = [];
 
-    [this.socket, this.site, this.lobby, this.stat] = this.startSocket();
+    [this.socket, this.site, this.lobby, this.stat, this.photos] = this.startSocket();
   }
 
   initialize(cb) {
@@ -69,15 +71,16 @@ export class State {
     socket.onError(ev => console.log("ERROR", ev));
     socket.onClose(e => console.log("CLOSE", e));
 
-    var site  = this.setupSite(socket),
-        lobby = this.setupChat(socket),
-        stat  = this.setupStat(socket);
+    var site   = this.setupSite(socket),
+        lobby  = this.setupChat(socket),
+        stat   = this.setupStat(socket),
+        photos = this.setupPhotos(socket);
 
-    return [socket, site, lobby, stat];
+    return [socket, site, lobby, stat, photos];
   }
 
   setupSite(socket) {
-    var site = socket.channel("site", {})
+    var site = socket.channel("site", {});
 
     site.join().receive("ignore", () => console.log("auth error"))
                 .receive("ok",     () => console.log("join ok"))
@@ -90,7 +93,7 @@ export class State {
   }
 
   setupChat(socket) {
-    var lobby = socket.channel("rooms:lobby", {})
+    var lobby = socket.channel("rooms:lobby", {});
 
     lobby.join().receive("ignore", () => console.log("auth error"))
                 .receive("ok",     () => console.log("join ok"))
@@ -111,7 +114,7 @@ export class State {
   }
 
   setupStat(socket) {
-    var stat = socket.channel("rooms:stat", {})
+    var stat = socket.channel("rooms:stat", {});
 
     stat.join().receive("ignore", () => console.log("auth error"))
                .receive("ok",     () => console.log("join ok"))
@@ -126,6 +129,40 @@ export class State {
                     + " / " + stat.online + " online";
     }.bind(this));
 
+  }
+
+  setupPhotos(socket) {
+    console.log('setupPhotos');
+    var photos = socket.channel("photos", {});
+
+    photos.join().receive("ignore", () => console.log("auth error"))
+               .receive("ok",     () => console.log("join ok"))
+               .receive("error",  () => console.log("Connection interruption"));
+
+    photos.onError(e => console.log("something went wrong", e));
+    photos.onClose(e => console.log("channel closed", e));
+
+    photos.on("new", photo => {
+      var img = new Image()
+      img.src = photo.url;
+      img.setAttribute("data-jslghtbx", photo.full_url);
+      img.setAttribute('data-jslghtbx-index', this.lightbox.thumbnails.length)
+      img.setAttribute("data-jslghtbx-group", "main");
+      img.setAttribute("data-jslghtbx-caption",
+        'See this image in the <a target="_blank" href="'+photo.gallery_url+'">Photo Gallery
+        <sup><i class="fa fa-external-link" aria-hidden="true"></i></sup></a>.');
+
+      this.photos.unshift(photo);
+      this.photos.pop();
+
+      this.pushEvent(null, {special: "A new photo has been added."});
+
+      setTimeout(() => this.setupLightbox(), 800);
+    }.bind(this));
+
+    photos.on("refresh", photos => {
+      this.photos = photos.reverse();
+    }.bind(this));
   }
 
   getShows(cb) {
@@ -229,9 +266,9 @@ export class State {
   }
 
   setupStamps(msg) {
-    let username  = msg.user || "anonymous"
-    let body      = msg.body
-    let date      = new Date(msg.stamp)
+    let username  = msg.user || "anonymous";
+    let body      = msg.body;
+    let date      = msg.stamp ? new Date(msg.stamp) : new Date();
 
     let ampm, hours;
 
@@ -259,5 +296,49 @@ export class State {
     msg.fullStamp  = fullStamp;
 
     return msg;
+  }
+
+  setupLightbox() {
+    var options = {
+      boxId:              this.lightbox ? 'jslghtbx' : null,
+			dimensions:         true,
+			captions:           true,
+			prevImg:            false,
+			nextImg:            false,
+			hideCloseBtn:       false,
+			closeOnClick:       true,
+			loadingAnimation:   200,
+			animElCount:        4,
+			preload:            true,
+			carousel:           true,
+			animation:          400,
+			nextOnClick:        true,
+			responsive:         true,
+			maxImgSize:         0.8,
+			keyControls:        true,
+			// callbacks
+			onopen: function(){
+        console.log('onopen');
+					// ...
+			},
+			onclose: function(){
+        console.log('orncloase');
+					// ...
+			},
+			onload: function(){
+					console.log('onlead');
+					// ...
+			},
+			onresize: function(event){
+					// ...
+			},
+			onloaderror: function(event){
+        console.log('onleoaderror');
+					// ...
+			}
+		};
+
+    this.lightbox = new Lightbox();
+    this.lightbox.load(options);
   }
 }
