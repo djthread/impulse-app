@@ -149,8 +149,7 @@ export class State {
       img.setAttribute('data-jslghtbx-index', this.lightbox.thumbnails.length)
       img.setAttribute("data-jslghtbx-group", "main");
       img.setAttribute("data-jslghtbx-caption",
-        'See this image in the <a target="_blank" href="'+photo.gallery_url+'">Photo Gallery
-        <sup><i class="fa fa-external-link" aria-hidden="true"></i></sup></a>.');
+        'See this image in the <a target="_blank" href="'+photo.gallery_url+'">Photo Gallery<sup><i class="fa fa-external-link" aria-hidden="true"></i></sup></a>.');
 
       this.photos.unshift(photo);
       this.photos.pop();
