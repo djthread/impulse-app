@@ -12,7 +12,9 @@
         </div>
         <p class="happens_on">${ev.happens_on | dateFormat:'dddd, MMMM Do'}</p>
         <p class="title">${ev.title}</p>
-        <p class="description" if.bind="ev.description">${ev.description}</p>
+        <p class="description" if.bind="ev.description">
+          <markdown model.bind="ev.description"></markdown>
+        </p>
         <div class="performances">
           <table>
             <template repeat.for="line of ev.info.lines">
