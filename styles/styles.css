@@ -100,9 +100,9 @@ input.form-control { background-color: rgba(99,99,99,0.5); padding: 1%;
 input.chat-name { width: 17%; }
 input.chat-message { width: 82%; float: right; }
 input.chat-submit { position: absolute; left: -9999px; }
-.infoline { float: right; font-size: small; color: #999; }
+.infoline { float: right; font-size: small; color: #999; display: none; }
 .infoline span { font-weight: bold; color: white; }
-a.infobutton { clear: both; text-align: center; margin-top: 1em; padding: 0.1em 1em;
+a.infobutton { clear: both; text-align: center; padding: 0.1em 1em;
   background-color: rgba(255,95,48,0.1); border: 2px solid #630; display: block;
   color: white; text-decoration: none; }
 a.infobutton:hover {

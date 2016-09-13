@@ -21,7 +21,7 @@ export class Live {
   }
 
   attached() {
-    videojs.options.flash.swf = "/jspm_packages/npm/video.js@5.8.0/dist/video-js.swf"
+    videojs.options.flash.swf = "/jspm_packages/npm/video.js@5.13.0/dist/video-js.swf"
     videojs(document.getElementById('thevideo'), {"fluid": true, "aspectRatio": "16:9"});
   }
 
