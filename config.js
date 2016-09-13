@@ -37,7 +37,7 @@ System.config({
     "fetch": "github:github/fetch@0.10.1",
     "font-awesome": "npm:font-awesome@4.6.3",
     "moment": "npm:moment@2.15.0",
-    "phoenix.js": "github:djthread/phoenix.js@1.2.1",
+    "phoenix.js": "github:djthread/phoenix.js@1.2.2",
     "showdown": "github:showdownjs/showdown@1.4.3",
     "text": "github:systemjs/plugin-text@0.0.3",
     "video.js": "npm:video.js@5.13.0",
