@@ -3,18 +3,16 @@ System.config({
   transpiler: "babel",
   babelOptions: {
     "optional": [
-      "es7.decorators",
-      "es7.classProperties"
+      "runtime",
+      "optimisation.modules.system"
     ]
   },
   paths: {
-    "*": "dist/*",
     "github:*": "jspm_packages/github/*",
     "npm:*": "jspm_packages/npm/*"
   },
 
   map: {
-    "Vheissu/aurelia-cookie": "github:Vheissu/aurelia-cookie@1.0.1",
     "aurelia-animator-css": "npm:aurelia-animator-css@1.0.1",
     "aurelia-bootstrapper": "npm:aurelia-bootstrapper@1.0.0",
     "aurelia-configuration": "npm:aurelia-configuration@1.0.11",
